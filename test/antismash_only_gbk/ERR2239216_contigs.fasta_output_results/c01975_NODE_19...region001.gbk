@@ -1,0 +1,195 @@
+LOCUS       c01975_NODE_19..        1234 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  NODE_1975_length_1234_cov_6.653414.
+ACCESSION   c01975_NODE_19..
+VERSION     c01975_NODE_19..
+KEYWORDS    .
+SOURCE      
+  ORGANISM  
+            .
+COMMENT     ##antiSMASH-Data-START##
+            Version      :: 5.1.2
+            Run date     :: 2021-04-09 17:53:26
+            Original ID  :: NODE_1975_length_1234_cov_6.653414
+            NOTE: This is a single cluster extracted from a larger record!
+            Orig. start  :: 0
+            Orig. end    :: 1234
+            ##antiSMASH-Data-END##
+FEATURES             Location/Qualifiers
+     protocluster    1..1234
+                     /aStool="rule-based-clusters"
+                     /contig_edge="True"
+                     /core_location="[1:1234](-)"
+                     /cutoff="0"
+                     /detection_rule="cds((PP-binding or NAD_binding_4) and
+                     (AMP-binding or A-OX))"
+                     /neighbourhood="20000"
+                     /product="NRPS-like"
+                     /protocluster_number="1"
+                     /tool="antismash"
+     proto_core      complement(2..1234)
+                     /aStool="rule-based-clusters"
+                     /tool="antismash"
+                     /cutoff="0"
+                     /detection_rule="cds((PP-binding or NAD_binding_4) and
+                     (AMP-binding or A-OX))"
+                     /neighbourhood="20000"
+                     /product="NRPS-like"
+                     /protocluster_number="1"
+     cand_cluster    1..1234
+                     /candidate_cluster_number="1"
+                     /contig_edge="True"
+                     /detection_rules="cds((PP-binding or NAD_binding_4) and
+                     (AMP-binding or A-OX))"
+                     /kind="single"
+                     /product="NRPS-like"
+                     /protoclusters="1"
+                     /tool="antismash"
+     region          1..1234
+                     /candidate_cluster_numbers="1"
+                     /contig_edge="True"
+                     /product="NRPS-like"
+                     /region_number="1"
+                     /rules="cds((PP-binding or NAD_binding_4) and (AMP-binding
+                     or A-OX))"
+                     /tool="antismash"
+     aSDomain        complement(2..124)
+                     /aSDomain="PCP"
+                     /aSTool="nrps_pks_domains"
+                     /database="nrpspksdomains.hmm"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksdomains_ctg1975_1_PCP.1"
+                     /evalue="6.10E-18"
+                     /label="ctg1975_1_PCP.1"
+                     /locus_tag="ctg1975_1"
+                     /protein_end="411"
+                     /protein_start="370"
+                     /score="56.6"
+                     /tool="antismash"
+                     /translation="ELAIAAVWQEVLGLEQVGRHDNFFELGGHSLLVITVIEQLR"
+     CDS             complement(2..1234)
+                     /NRPS_PKS="Domain: AMP-binding (0-261). E-value: 2.1e-72.
+                     Score: 235.7. Matches aSDomain:
+                     nrpspksdomains_ctg1975_1_AMP-binding.1"
+                     /NRPS_PKS="Domain: PCP (370-411). E-value: 6.1e-18. Score:
+                     56.6. Matches aSDomain: nrpspksdomains_ctg1975_1_PCP.1"
+                     /NRPS_PKS="type: NRPS-like protein"
+                     /gene_functions="biosynthetic (rule-based-clusters)
+                     NRPS-like: PP-binding"
+                     /gene_functions="biosynthetic (rule-based-clusters)
+                     NRPS-like: AMP-binding"
+                     /gene_kind="biosynthetic"
+                     /locus_tag="ctg1975_1"
+                     /sec_met_domain="AMP-binding (E-value: 5.3e-90, bitscore:
+                     287.9, seeds: 400, tool: rule-based-clusters)"
+                     /sec_met_domain="PP-binding (E-value: 2.8e-11, bitscore:
+                     30.1, seeds: 164, tool: rule-based-clusters)"
+                     /transl_table=11
+                     /translation="TSGSTGQPKGVMVEHGQVARLFAATDAQFQFGPEDVWTLFHSFAF
+                     DFSVWEIWGALLHGGRLVIVPAAVSRSPRDFHALLIEQGVTVLNQTPSAFRQLIAAEAD
+                     STATHRLRYVIFGGEALDLPMLAPWIARNDPDQTQLINMYGITEITVHATYRRIERRDV
+                     QAGQGSLIGRPLSDLRVLVLDPHQQPVPIGVTGELYVGGDGIARGYLNRPELTAERFLP
+                     DPYSSDPSARLYRTGDLGRWLPGGELQYVGRNDFQVKIRGFRIELAEIEARLQACDGVR
+                     EAVVLAREDSPGDKRLVGYVITEPESDPSAAELRDHLLLHLADYMVPAAFVRVQQWPLT
+                     SNGKLDRAALPAPDASAVAARGYEAPVGETELAIAAVWQEVLGLEQVGRHDNFFELGGH
+                     SLLVITVIEQLR"
+     aSModule        2..1234
+                     /complete
+                     /domains="nrpspksdomains_ctg1975_1_AMP-binding.1"
+                     /domains="nrpspksdomains_ctg1975_1_PCP.1"
+                     /locus_tags="ctg1975_1"
+                     /starter_module
+                     /tool="antismash"
+                     /type="nrps"
+     CDS_motif       complement(32..61)
+                     /aSTool="nrps_pks_domains"
+                     /database="abmotifs"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksmotif_ctg1975_1_0004"
+                     /evalue="2.30E-03"
+                     /label="PCP_mC"
+                     /locus_tag="ctg1975_1"
+                     /protein_end="401"
+                     /protein_start="391"
+                     /score="11.2"
+                     /tool="antismash"
+                     /translation="NFFELGGHSLL"
+     CDS_motif       complement(422..487)
+                     /aSTool="nrps_pks_domains"
+                     /database="abmotifs"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksmotif_ctg1975_1_0003"
+                     /evalue="1.10E-12"
+                     /label="NRPS-A_a8"
+                     /locus_tag="ctg1975_1"
+                     /protein_end="271"
+                     /protein_start="249"
+                     /score="39.8"
+                     /tool="antismash"
+                     /translation="YVGRNDFQVKIRGFRIELAEIEA"
+     aSDomain        complement(452..1234)
+                     /aSDomain="AMP-binding"
+                     /aSTool="nrps_pks_domains"
+                     /database="nrpspksdomains.hmm"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksdomains_ctg1975_1_AMP-binding.1"
+                     /evalue="2.10E-72"
+                     /label="ctg1975_1_AMP-binding.1"
+                     /locus_tag="ctg1975_1"
+                     /protein_end="261"
+                     /protein_start="0"
+                     /score="235.7"
+                     /tool="antismash"
+                     /translation="TSGSTGQPKGVMVEHGQVARLFAATDAQFQFGPEDVWTLFHSFAF
+                     DFSVWEIWGALLHGGRLVIVPAAVSRSPRDFHALLIEQGVTVLNQTPSAFRQLIAAEAD
+                     STATHRLRYVIFGGEALDLPMLAPWIARNDPDQTQLINMYGITEITVHATYRRIERRDV
+                     QAGQGSLIGRPLSDLRVLVLDPHQQPVPIGVTGELYVGGDGIARGYLNRPELTAERFLP
+                     DPYSSDPSARLYRTGDLGRWLPGGELQYVGRNDFQVKIRG"
+     CDS_motif       complement(575..664)
+                     /aSTool="nrps_pks_domains"
+                     /database="abmotifs"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksmotif_ctg1975_1_0002"
+                     /evalue="4.50E-20"
+                     /label="NRPS-A_a6"
+                     /locus_tag="ctg1975_1"
+                     /protein_end="220"
+                     /protein_start="190"
+                     /score="63.6"
+                     /tool="antismash"
+                     /translation="PIGVTGELYVGGDGIARGYLNRPELTAERFL"
+     CDS_motif       complement(1190..1234)
+                     /aSTool="nrps_pks_domains"
+                     /database="abmotifs"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksmotif_ctg1975_1_0001"
+                     /evalue="2.10E-07"
+                     /label="NRPS-A_a3"
+                     /locus_tag="ctg1975_1"
+                     /protein_end="15"
+                     /protein_start="0"
+                     /score="23.3"
+                     /tool="antismash"
+                     /translation="TSGSTGQPKGVMVEHG"
+ORIGIN
+        1 gacgcagttg ctcaatgact gtgatcacca gcaacgagtg cccgcccagt tcgaagaagt
+       61 tgtcgtggcg tcccacctgc tccagtccca gcacctcctg ccataccgca gcgatggcca
+      121 gttctgtctc ccccaccggc gcctcgtagc cacgggcggc gacggcgctg gcgtcgggcg
+      181 ccggcaatgc agcccggtcg agcttgccgt tgctggtcag gggccactgt tggacgcgca
+      241 caaacgcggc gggaaccatg tagtcggcca ggtgcagcag cagatggtcg cgaagctctg
+      301 cggcactggg gtccgattcc ggctctgtga tcacatagcc aaccaggcgt ttgtcgccgg
+      361 ggctgtcctc gcgtgcaagc accaccgctt cgcgtacccc atcacacgcc tgcaggcggg
+      421 cctcgatttc ggccagttcg atccggaagc cacgaatctt cacctggaag tcgttgcggc
+      481 ccacgtactg cagttcgccg ccgggcaacc agcggcccag gtcaccggtg cgatacagtc
+      541 gcgccgacgg gtctgagctg taggggtcgg gcaggaaacg ctcggcagtc agctcggggc
+      601 ggttgaggta gccgcgcgca atgccgtcac cccccacata gagctcgccg gtcaccccga
+      661 tcgggaccgg ttgctggtgg gggtccagca ccaggacccg tagatccgac aagggcctgc
+      721 caatcagact gccctgcccc gcctgaacgt cacgccgctc gatgcggcgg tacgtggcat
+      781 gtacggtgat ttccgtgatg ccatacatgt tgatcagctg ggtctgatca ggatcattgc
+      841 gtgcgatcca cggtgccagc atgggcaggt cgagcgcttc gccgccgaag atgacgtaac
+      901 gcaggcgatg cgtcgcggta ctgtcagcct ccgctgcgat cagctgccgg aacgcgctgg
+      961 gtgtctggtt gagcacggtg acgccttgct cgatcagcaa tgcatggaaa tcccgtggac
+     1021 tgcggctgac agctgcggga acgatgacca accgaccacc gtgcagcagt gcaccccata
+     1081 tctcccatac cgagaaatcg aacgcgaagg agtggaacag tgtccacaca tcctcggggc
+     1141 caaactggaa ctgcgcatcg gtcgccgcga acaaccgggc gacttgacca tgctccacca
+     1201 tcacaccctt gggctgaccg gtcgagccag aggt
+//

@@ -1,0 +1,131 @@
+LOCUS       c01966_NODE_19..        1889 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  NODE_1966_length_1889_cov_1.945916.
+ACCESSION   c01966_NODE_19..
+VERSION     c01966_NODE_19..
+KEYWORDS    .
+SOURCE      
+  ORGANISM  
+            .
+COMMENT     ##antiSMASH-Data-START##
+            Version      :: 5.1.2
+            Run date     :: 2021-04-09 20:57:36
+            Original ID  :: NODE_1966_length_1889_cov_1.945916
+            NOTE: This is a single cluster extracted from a larger record!
+            Orig. start  :: 0
+            Orig. end    :: 1889
+            ##antiSMASH-Data-END##
+FEATURES             Location/Qualifiers
+     protocluster    1..1889
+                     /aStool="rule-based-clusters"
+                     /contig_edge="True"
+                     /core_location="[283:1887]"
+                     /cutoff="20000"
+                     /detection_rule="((LANC_like and (Lant_dehydr_N or
+                     Lant_dehydr_C) or cds(LANC_like and (Pkinase or DUF4135)))
+                     and not (YcaO or TIGR03882))"
+                     /neighbourhood="10000"
+                     /product="lanthipeptide"
+                     /protocluster_number="1"
+                     /tool="antismash"
+     proto_core      284..1887
+                     /aStool="rule-based-clusters"
+                     /tool="antismash"
+                     /cutoff="20000"
+                     /detection_rule="((LANC_like and (Lant_dehydr_N or
+                     Lant_dehydr_C) or cds(LANC_like and (Pkinase or DUF4135)))
+                     and not (YcaO or TIGR03882))"
+                     /neighbourhood="10000"
+                     /product="lanthipeptide"
+                     /protocluster_number="1"
+     cand_cluster    1..1889
+                     /candidate_cluster_number="1"
+                     /contig_edge="True"
+                     /detection_rules="((LANC_like and (Lant_dehydr_N or
+                     Lant_dehydr_C) or cds(LANC_like and (Pkinase or DUF4135)))
+                     and not (YcaO or TIGR03882))"
+                     /kind="single"
+                     /product="lanthipeptide"
+                     /protoclusters="1"
+                     /tool="antismash"
+     region          1..1889
+                     /candidate_cluster_numbers="1"
+                     /contig_edge="True"
+                     /product="lanthipeptide"
+                     /region_number="1"
+                     /rules="((LANC_like and (Lant_dehydr_N or Lant_dehydr_C) or
+                     cds(LANC_like and (Pkinase or DUF4135))) and not (YcaO or
+                     TIGR03882))"
+                     /tool="antismash"
+     CDS             complement(3..95)
+                     /locus_tag="ctg1966_1"
+                     /transl_table=11
+                     /translation="MEIFAGTGQRRRIQYLPVTRDVEYRIRIELV"
+     CDS             complement(284..592)
+                     /gene_functions="biosynthetic (rule-based-clusters)
+                     lanthipeptide: LANC_like"
+                     /gene_kind="biosynthetic"
+                     /locus_tag="ctg1966_2"
+                     /sec_met_domain="LANC_like (E-value: 2.4e-07, bitscore:
+                     17.9, seeds: 47, tool: rule-based-clusters)"
+                     /transl_table=11
+                     /translation="MKTRIEHKIHAIADVLFRDMKDGKLDNEGVGLLAGQTGIIIFCKH
+                     YLQVFPNSEKEEILEGFLETYFDKLTSEIGLFTYCGGLTGALEGLKYLNRERLLEID"
+     CDS             complement(618..1511)
+                     /gene_functions="biosynthetic (rule-based-clusters)
+                     lanthipeptide: Lant_dehydr_C"
+                     /gene_kind="biosynthetic"
+                     /locus_tag="ctg1966_3"
+                     /sec_met_domain="Lant_dehydr_C (E-value: 7.2e-56, bitscore:
+                     178.0, seeds: 35, tool: rule-based-clusters)"
+                     /transl_table=11
+                     /translation="MIQRKFIPGSQWLYFKIYTGVKTADEVLAHTIRPFLRELYAERWI
+                     DGSFFIRYNDPDFHIRLRLHIDRFENYAPIFRRFEALFQPLVENGAVIRVLCDTYVREI
+                     ERYGANTMEPVERLFGIDSGAILELLEKIEELPTDTRETTRWQLALALLDDTMTAFGKT
+                     PDEKKTLFSRMAENFKKEFGFTSHSFTKQINDKYRRYRADIEKALSDREMFTDYDAILQ
+                     PRKSEIGKVAAEISRIQSSGLAVPTIDELLGSISHMTMNRWFRTNNRQFELVIYDFLTK
+                     YFESAIARTKRLVEKQ"
+     CDS             complement(1483..1887)
+                     /gene_functions="biosynthetic (rule-based-clusters)
+                     lanthipeptide: Lant_dehydr_N"
+                     /gene_kind="biosynthetic"
+                     /locus_tag="ctg1966_4"
+                     /sec_met_domain="Lant_dehydr_N (E-value: 2.4e-20, bitscore:
+                     60.1, seeds: 73, tool: rule-based-clusters)"
+                     /transl_table=11
+                     /translation="GLLAAYDYLPRIQYKDIILSRELWRIKQEEVEGMDKLSDSELSVR
+                     FREFLQKRQMPTEVVIPDSDNELYLNLEDTQCQRLLLEEIAKRKQIVLEEFLFRNDSGI
+                     VRRGKDRFTNEVIFAFHKNEQHDTEKVHTR"
+ORIGIN
+        1 ccaacaagct caatacggat acgatactcg acatcccgtg tgacaggcag atattgtatc
+       61 cgacgcctct gtccagtccc agcgaagatt tccatttgta gattctatct cctttttcag
+      121 cggtttgctc caatgcctcc aatgcccggt ttacaaactc tgcgtcgtcg caataatatt
+      181 tgacgatgcc cagtccgcca tgcaggtagt cgtaattccc gtttagaata ctgtttatcg
+      241 cgaatgtttg cagcaattcc cgatagtttt tctccacatc ggactagtcg atctccaaca
+      301 accgctcgcg gttcaggtat ttcaaaccct ccaaagcgcc ggtaagtccg ccgcagtatg
+      361 taaataatcc tatttcggag gttaatttgt cgaaatacgt ttcgaggaag ccttctaaaa
+      421 tttcctcttt ctccgaattg ggaaacactt gcagatagtg tttgcagaag ataataatgc
+      481 cggtctgtcc ggccagcaac ccgacgcctt cgttgtcgag cttaccgtct ttcatatccc
+      541 gaaacagcac atcggctatt gcatggattt tatgttcgat tctcgttttc atttttaccg
+      601 aataggaatg aatactttca ttgtttttcc acaagccgct ttgtccgtgc gatcgccgac
+      661 tcgaaatact tggttaaaaa gtcataaata accaattcga actgccggtt attggtacgg
+      721 aaccaacggt tcattgtcat gtgcgaaatg ctgcccagca actcgtcgat cgtaggtacc
+      781 gccagcccgg aggattggat tcgggaaatt tccgctgcga cttttccgat ttccgactta
+      841 cgaggttgta atatggcatc gtaatccgta aacatctcgc ggtcggacaa cgctttttcg
+      901 atgtccgctc gataacggcg gtacttatca ttgatctgtt tcgtgaacga atgcgaggtg
+      961 aatccgaact ctttcttgaa attctcggcc atccgggaaa acagtgtttt tttctcgtcc
+     1021 ggtgtttttc cgaaggcggt catcgtatca tccagtaatg ccagtgccaa ctgccagcgg
+     1081 gtcgtttccc gcgtgtccgt aggtaattcc tcaatctttt cgagcaattc cagaatcgca
+     1141 ccgctgtcta ttccgaacaa tcgttcgacc ggctccatag tatttgcccc gtatcgttcg
+     1201 atttcacgga cgtaagtatc gcataaaacc cttataacag ccccgttttc caccaaaggc
+     1261 tgaaacaacg cttcgaaacg tcggaagata ggggcatagt tctcgaatcg gtcgatgtgg
+     1321 agccgcagac ggatatgaaa atccgggtcg ttataacgaa taaagaagct gccgtcgatc
+     1381 catcgctctg cgtacagttc ccgaaggaat ggccgtatgg tatgcgccaa aacctcatca
+     1441 gccgttttga cgcccgtgta tattttgaag tatagccatt ggctaccggg tatgaacttt
+     1501 ctctgtatca tgttgctcgt ttttatgaaa ggcgaaaatc acctcgttcg taaatcggtc
+     1561 ttttccccga cggacaatac cggagtcgtt acgaaacaga aattcctcca atacgatctg
+     1621 tttgcgtttg gcgatctctt ccagaagcag tcgttggcat tgtgtatctt ccaaattcaa
+     1681 atagagttcg ttgtcgctgt cgggaatgac gacttccgtc ggcatttgtc gtttctgtaa
+     1741 aaattccctg aagcggacgg aaagttccga atcggataat ttatccatcc cttcgacctc
+     1801 ttcttgtttg attctccaca gttctctcga aagaataatg tccttgtatt gaatccgagg
+     1861 aagataatca taagcggcta aaagtcccg
+//

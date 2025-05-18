@@ -1,0 +1,153 @@
+LOCUS       c02808_NODE_28..        1978 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  NODE_2808_length_1978_cov_1.920568.
+ACCESSION   c02808_NODE_28..
+VERSION     c02808_NODE_28..
+KEYWORDS    .
+SOURCE      
+  ORGANISM  
+            .
+COMMENT     ##antiSMASH-Data-START##
+            Version      :: 5.1.2
+            Run date     :: 2021-01-15 23:55:50
+            Original ID  :: NODE_2808_length_1978_cov_1.920568
+            NOTE: This is a single cluster extracted from a larger record!
+            Orig. start  :: 0
+            Orig. end    :: 1978
+            ##antiSMASH-Data-END##
+FEATURES             Location/Qualifiers
+     protocluster    1..1978
+                     /aStool="rule-based-clusters"
+                     /contig_edge="True"
+                     /core_location="[485:1976](-)"
+                     /cutoff="0"
+                     /detection_rule="cds((PP-binding or NAD_binding_4) and
+                     (AMP-binding or A-OX))"
+                     /neighbourhood="20000"
+                     /product="NRPS-like"
+                     /protocluster_number="1"
+                     /tool="antismash"
+     proto_core      complement(486..1976)
+                     /aStool="rule-based-clusters"
+                     /tool="antismash"
+                     /cutoff="0"
+                     /detection_rule="cds((PP-binding or NAD_binding_4) and
+                     (AMP-binding or A-OX))"
+                     /neighbourhood="20000"
+                     /product="NRPS-like"
+                     /protocluster_number="1"
+     cand_cluster    1..1978
+                     /candidate_cluster_number="1"
+                     /contig_edge="True"
+                     /detection_rules="cds((PP-binding or NAD_binding_4) and
+                     (AMP-binding or A-OX))"
+                     /kind="single"
+                     /product="NRPS-like"
+                     /protoclusters="1"
+                     /tool="antismash"
+     region          1..1978
+                     /candidate_cluster_numbers="1"
+                     /contig_edge="True"
+                     /product="NRPS-like"
+                     /region_number="1"
+                     /rules="cds((PP-binding or NAD_binding_4) and (AMP-binding
+                     or A-OX))"
+                     /tool="antismash"
+     CDS             complement(122..355)
+                     /locus_tag="ctg2808_1"
+                     /transl_table=11
+                     /translation="MQKVFYGGIKMNKGTVKWFNAEKGFGFITSEEGKDLFVHYSEIKK
+                     EGFKTLEEGQQVSFDVKEGQKGPQAANVQILG"
+     CDS             complement(486..1976)
+                     /NRPS_PKS="Domain: PP-binding (205-269). E-value: 4.4e-10.
+                     Score: 31.8. Matches aSDomain:
+                     nrpspksdomains_ctg2808_2_PP-binding.1"
+                     /NRPS_PKS="type: other"
+                     /gene_functions="biosynthetic (rule-based-clusters)
+                     NRPS-like: PP-binding"
+                     /gene_functions="biosynthetic (rule-based-clusters)
+                     NRPS-like: AMP-binding"
+                     /gene_kind="biosynthetic"
+                     /locus_tag="ctg2808_2"
+                     /sec_met_domain="AMP-binding (E-value: 1.1e-31, bitscore:
+                     96.9, seeds: 400, tool: rule-based-clusters)"
+                     /sec_met_domain="PP-binding (E-value: 1.7e-11, bitscore:
+                     31.8, seeds: 164, tool: rule-based-clusters)"
+                     /transl_table=11
+                     /translation="DVCIGTVGKTIPGVEVKIADDGELLVKGRNVLKEYYNKPEATKEA
+                     KDENGWFHTGDLGKIENGYITIIGRKKEMIVLSNGKNINPIDIENEIAKGSDLIKEIAV
+                     MEHNNHLLALVYPDFKLIKERSITNITETLKWDIIDSYNINAPAYRKILEIKIVKDEFP
+                     KTKLGKLRRFMLKDILKNLEDGGENAHKERPEDPESKTREFQTLAQYIKEEKGENIYPD
+                     SHIEIDLGLDSLDIIQLNSFIEKTFGFKIKEEETVDLKVIKDICEYIRKNSKEYHLEKI
+                     NWSEILKESIDYPLPSSNMIWLTKIFFAPILKFYLGLKIKGIEKLSKEPRIIICNHESF
+                     IDAFAVQRLFKGDMLKNTYYFAIKKHFNKVGLRFMANHGNIILMDINENLKESLQISAE
+                     VLKEGKNLVIFPEGARTRDGKLQDFKKFFGILSKELNIPVTVLGIDGAYESMPFGSIFP
+                     RPAKIKLEVLGEVDPNGLSVEEIVNNSKEIIRVWKAGK"
+     aSDomain        complement(1170..1361)
+                     /aSDomain="PP-binding"
+                     /aSTool="nrps_pks_domains"
+                     /database="nrpspksdomains.hmm"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksdomains_ctg2808_2_PP-binding.1"
+                     /evalue="4.40E-10"
+                     /label="ctg2808_2_PP-binding.1"
+                     /locus_tag="ctg2808_2"
+                     /protein_end="269"
+                     /protein_start="205"
+                     /score="31.8"
+                     /tool="antismash"
+                     /translation="TLAQYIKEEKGENIYPDSHIEIDLGLDSLDIIQLNSFIEKTFGFK
+                     IKEEETVDLKVIKDICEYIR"
+     aSModule        1170..1361
+                     /domains="nrpspksdomains_ctg2808_2_PP-binding.1"
+                     /incomplete
+                     /locus_tags="ctg2808_2"
+                     /tool="antismash"
+                     /type="unknown"
+     CDS_motif       complement(1842..1913)
+                     /aSTool="nrps_pks_domains"
+                     /database="abmotifs"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksmotif_ctg2808_2_0001"
+                     /evalue="1.00E-05"
+                     /label="NRPS-A_a6"
+                     /locus_tag="ctg2808_2"
+                     /protein_end="45"
+                     /protein_start="21"
+                     /score="18.0"
+                     /tool="antismash"
+                     /translation="GELLVKGRNVLKEYYNKPEATKEAK"
+ORIGIN
+        1 taaacttctc acaattactc ctattttacc tttttttaca taatatattt ttatttcatc
+       61 taattttctt tatatgaaaa aaacctactc aatcgagtag gcttaaaagt cattctttta
+      121 attatccaag gatttgtacg tttgcagctt gaggtccttt ttgtccttct ttaacgtcga
+      181 aagatacttg ttgtccttct tctaaagttt tgaatccttc ttttttgatt tcagaatagt
+      241 gaacgaataa gtcttttcct tcttcagaag tgataaatcc aaatcctttc tcagcgttaa
+      301 accatttaac tgttcctttg ttcattttga tacctccata aaatactttt tgcatagaat
+      361 ttaaaaagat tagctttgaa acttcagtat tttatttcga tacccctatt tcagaatcta
+      421 tacttcaata atctctactg cataactaat tatactttat ttaggttatt ttgtcaagtt
+      481 aatttttatt ttccagcttt ccaaactctt ataatttcct tggaattatt aacaatttct
+      541 tcaacagaaa gtccattagg atcaacctcc cccaaaactt ctagttttat ttttgcaggt
+      601 cttggaaata tacttccaaa tggcatagat tcataagctc catctattcc taaaactgta
+      661 acaggaatat ttaattcttt tgataaaatt ccaaagaatt ttttgaaatc ttgtaatttt
+      721 ccgtcacgag ttcttgctcc ctctgggaag attactagat tttttccctc ttttaaaact
+      781 tcagctgaaa tttgtaaact ttcttttaaa ttttcattta tatccataag gattatgttt
+      841 ccgtgatttg ccataaatct taaacctact ttattaaaat gttttttgat agcaaagtaa
+      901 taagtatttt ttagcatatc ccctttaaat aatctttgaa ctgcaaaagc atcaataaaa
+      961 ctttcatggt tacagattat tattcttggc tctttagaaa gtttttctat tccttttatt
+     1021 tttaaaccta gatagaattt taaaattgga gcaaagaaaa tcttagtcaa ccaaatcata
+     1081 tttgatgatg gcaatggata atcaatagat tcttttaaaa tctctgacca attaattttt
+     1141 tcaagatgat actctttact attttttctt atatattcac aaatatcttt tataactttt
+     1201 aaatcaacag tttcttcctc ttttatttta aatccaaaag ttttttcaat aaatgaattt
+     1261 agctgaatta tatcaaggga atcaagtcct aaatctatct ctatatgaga atctggatag
+     1321 atattttctc ccttttcctc ttttatatat tgagctaaag tttggaactc tcttgtttta
+     1381 ctttctggat cttctggtct ttctttatga gcattttctc caccatcttc aagatttttt
+     1441 aatatatcct taagcataaa tcttctcaat tttccaagtt ttgtttttgg aaattcatct
+     1501 ttaactattt taatctccaa aatttttcta taagctggag catttatatt gtaagaatct
+     1561 attatatccc attttaatgt ttctgtaata tttgttatac ttctctcttt tataagttta
+     1621 aaatctggat aaactaaagc taaaagatgg ttattatgct ccataacagc tatctctttt
+     1681 ataaggtcgc ttcccttagc aatctcattt tcaatatcaa taggatttat atttttacca
+     1741 tttgataaaa ctatcatctc tttttttcta ccgattatag ttatatatcc attttctatt
+     1801 tttcctaaat ctccagtatg gaaccaacca ttttcatctt tagcctcttt tgttgcttca
+     1861 ggcttgttat aatattcttt aagtacattt cttcctttta ctaaaagttc tccgtcatca
+     1921 gcaattttca cttctacacc tgggattgtt tttccaacag ttccaatgca aacatcat
+//

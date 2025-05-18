@@ -209,7 +209,8 @@ def get_bigscape_df(input_file):
 
 def get_neighbors(target,dataframe,column1,column2):
     subset1 = dataframe[(dataframe[column1]==target)]
-    subcat = subset1.append(dataframe[(dataframe[column2]==target)])
+    subcat = pd.concat([subset1, dataframe[(dataframe[column2] == target)]])
+    # subcat = subset1.append(dataframe[(dataframe[column2]==target)])
     temp_list = []
     for index,row in subcat.iterrows():
         temp_list.append(subcat[column1][index])
@@ -232,6 +233,7 @@ def to_graph(l):
     return G
 
 def get_family_dict(components_list,dataframe,dictionary,column1,column2,column3):
+    print("DEBUG: dictionary type is", type(dictionary))
     count = 0
     for family in list(components_list):
         count += 1
@@ -283,19 +285,42 @@ def parse_gbk_list(folder_list):
                             new_name_list.append(new_name)
     return gbk_list,new_name_list
 
-def get_bigscape_dict2(name_dict,bigscape_dict):
+# def get_bigscape_dict2(name_dict,bigscape_dict):
+#     bigscape_dict2 = defaultdict(list)
+#     for key in bigscape_dict:
+#         for value in bigscape_dict[key]:
+#             if 'BGC' in value:
+#                 bigscape_dict2[key].append(value)
+#             else:
+#                 if 'ERR' in name_dict[value]:
+#                     new_ERR_name = name_dict[value].split('_')[0] + '.' + name_dict[value].split('.')[1]
+#                     bigscape_dict2[key].append(new_ERR_name)
+#                 else:
+#                     bigscape_dict2[key].append(name_dict[value])
+#     return bigscape_dict2
+
+# change: I have added the block below as a replacement for the function above 
+def get_bigscape_dict2(name_dict, bigscape_dict):
     bigscape_dict2 = defaultdict(list)
-    for key in bigscape_dict:
-        for value in bigscape_dict[key]:
+    for key, values in bigscape_dict.items():
+        for value in values:
+            if value not in name_dict:
+                print(f"[WARNING] BGC not found in name_dict: {value}")
+                continue  # skip unmapped BGCs
+            
             if 'BGC' in value:
-                bigscape_dict2[key].append(value)
+                # handle BGC case here if needed
+                # bigscape_dict2[key].append(name_dict[value])
+                bigscape_dict2[key].append(value) # keep original BGC name
+                continue  # move to next value
+            
+            if 'ERR' in name_dict[value]:
+                new_ERR_name = name_dict[value].split('_')[0] + '.' + name_dict[value].split('.')[1]
+                bigscape_dict2[key].append(new_ERR_name)
             else:
-                if 'ERR' in name_dict[value]:
-                    new_ERR_name = name_dict[value].split('_')[0] + '.' + name_dict[value].split('.')[1]
-                    bigscape_dict2[key].append(new_ERR_name)
-                else:
-                    bigscape_dict2[key].append(name_dict[value])
+                bigscape_dict2[key].append(name_dict[value])
     return bigscape_dict2
+
 
 def rename_bigscape_df(antismash_folder,bigscape_df,bigscape_dict):
     gbk_list,new_name_list = parse_gbk_list([antismash_folder])
@@ -306,11 +331,26 @@ def rename_bigscape_df(antismash_folder,bigscape_df,bigscape_dict):
         if 'BGC' in bigscape_df['Clustername_1'].loc[i]:
             new_col1.append(bigscape_df['Clustername_1'].loc[i])
         else:
-            new_col1.append(name_dict[bigscape_df['Clustername_1'].loc[i]])
+            # change: I have commented the line belone 
+            # new_col1.append(name_dict[bigscape_df['Clustername_1'].loc[i]])
+            val = bigscape_df['Clustername_1'].loc[i]
+            if val in name_dict:
+                new_col1.append(name_dict[val])
+            else:          
+                print(f"[WARNING] Clustername_1 not found in name_dict: {val}")
+                new_col1.append(val)  # Or optionally skip, or append None
+            
         if 'BGC' in bigscape_df['Clustername_2'].loc[i]:
             new_col2.append(bigscape_df['Clustername_2'].loc[i])
         else:
-            new_col2.append(name_dict[bigscape_df['Clustername_2'].loc[i]])
+            # change: I have commented the line belone
+            # new_col2.append(name_dict[bigscape_df['Clustername_2'].loc[i]])
+            val = bigscape_df['Clustername_2'].loc[i]
+            if val in name_dict:
+                new_col2.append(name_dict[val])
+            else:
+                print(f"[WARNING] Clustername_2 not found in name_dict: {val}")
+                new_col2.append(val)
     bigscape_df['Clustername_1'] = new_col1
     bigscape_df['Clustername_2'] = new_col2
     return bigscape_df,bigscape_dict2
@@ -424,8 +464,16 @@ def get_testing_df(merged_ispec_mat,networked_cols,results_folder):
 
 def running_knn(training_df,testing_df,k_value):
     X_div = training_df.drop("label", axis=1)
+    # change: I have added the line below 
+    X_div.columns = X_div.columns.astype(str)
     y_div = training_df["label"]
-    nbrs = NearestNeighbors(n_neighbors=k_value, algorithm='ball_tree').fit(X_div,y_div)
+    # change: I have commented the line below 
+    # nbrs = NearestNeighbors(n_neighbors=k_value, algorithm='ball_tree').fit(X_div,y_div)
+    # change: I have added the 3 lines below 
+    print("Training shape:", X_div.shape)
+    print("Testing shape:", testing_df.shape)
+    nbrs = NearestNeighbors(n_neighbors=k_value, algorithm='ball_tree').fit(X_div)
+
     distances, indices = nbrs.kneighbors(testing_df)
     y_div = y_div.reset_index(drop=True)
     neighbors_array = []
