@@ -1,0 +1,146 @@
+LOCUS       c02466_NODE_24..        1796 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  NODE_2466_length_1796_cov_2.301920.
+ACCESSION   c02466_NODE_24..
+VERSION     c02466_NODE_24..
+KEYWORDS    .
+SOURCE      
+  ORGANISM  
+            .
+COMMENT     ##antiSMASH-Data-START##
+            Version      :: 5.1.2
+            Run date     :: 2021-04-09 18:54:53
+            Original ID  :: NODE_2466_length_1796_cov_2.301920
+            NOTE: This is a single cluster extracted from a larger record!
+            Orig. start  :: 0
+            Orig. end    :: 1796
+            ##antiSMASH-Data-END##
+FEATURES             Location/Qualifiers
+     protocluster    1..1796
+                     /aStool="rule-based-clusters"
+                     /contig_edge="True"
+                     /core_location="[1:625](-)"
+                     /cutoff="20000"
+                     /detection_rule="(APE_KS1 or APE_KS2)"
+                     /neighbourhood="20000"
+                     /product="arylpolyene"
+                     /protocluster_number="1"
+                     /tool="antismash"
+     proto_core      complement(2..625)
+                     /aStool="rule-based-clusters"
+                     /tool="antismash"
+                     /cutoff="20000"
+                     /detection_rule="(APE_KS1 or APE_KS2)"
+                     /neighbourhood="20000"
+                     /product="arylpolyene"
+                     /protocluster_number="1"
+     cand_cluster    1..1796
+                     /candidate_cluster_number="1"
+                     /contig_edge="True"
+                     /detection_rules="(APE_KS1 or APE_KS2)"
+                     /kind="single"
+                     /product="arylpolyene"
+                     /protoclusters="1"
+                     /tool="antismash"
+     region          1..1796
+                     /candidate_cluster_numbers="1"
+                     /contig_edge="True"
+                     /product="arylpolyene"
+                     /region_number="1"
+                     /rules="(APE_KS1 or APE_KS2)"
+                     /tool="antismash"
+     CDS             complement(2..625)
+                     /gene_functions="biosynthetic (rule-based-clusters)
+                     arylpolyene: APE_KS1"
+                     /gene_kind="biosynthetic"
+                     /locus_tag="ctg2466_1"
+                     /sec_met_domain="APE_KS1 (E-value: 1.7e-65, bitscore:
+                     208.3, seeds: 15, tool: rule-based-clusters)"
+                     /transl_table=11
+                     /translation="MEQHRVVITGMGIYSCIGENREQVAESLYCGRSGIGLDPARKEMG
+                     YRSALTGILRKPDLRKALDRRQRMCLSEQGAYAYVATAEALAQAGIDTDWLLAHETGIL
+                     YGNDSSAEAVIHGADVIREKHNTVLVGSGNIFQSMNSTVTMNLSTIFNLRGINFTVSGA
+                     CASGSHAIGMAYLLIRQGLQQCVVCGGAEEVNLFSVGNFDALSAF"
+     CDS             complement(962..1795)
+                     /NRPS_PKS="Domain: PKS_KR (40-200). E-value: 5.3e-15.
+                     Score: 47.5. Matches aSDomain:
+                     nrpspksdomains_ctg2466_2_PKS_KR.1"
+                     /NRPS_PKS="type: other"
+                     /gene_functions="biosynthetic-additional
+                     (rule-based-clusters) adh_short"
+                     /gene_kind="biosynthetic-additional"
+                     /locus_tag="ctg2466_2"
+                     /sec_met_domain="adh_short (E-value: 3.8e-37, bitscore:
+                     115.1, seeds: 230, tool: rule-based-clusters)"
+                     /transl_table=11
+                     /translation="GEPDRSETTENKHGACGTPQREPPAPITDNMETNQKRRYALVTGA
+                     SRGIGRAVALRLAGMGYHVLVNYLANAAAAEETLALIRRQGGEGELLPFDVADREAAER
+                     ALGGWLEAHPDEAVEVLVNNAGIRRDGLLLWMPHEDWYGVLRTHLDGFFHVTQPLLKGM
+                     LVRKYGRIINIVSLSGIKGLPGQVNYSAAKGGLIAATRALAQEVAKKRVTVNAVAPGFI
+                     RTDMTADLDEAALRRTIPAGRFGEPEEVADLVAFLASEKASYITGEVISINGGIL"
+     aSDomain        complement(1196..1675)
+                     /aSDomain="PKS_KR"
+                     /aSTool="nrps_pks_domains"
+                     /database="nrpspksdomains.hmm"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksdomains_ctg2466_2_PKS_KR.1"
+                     /evalue="5.30E-15"
+                     /label="ctg2466_2_PKS_KR.1"
+                     /locus_tag="ctg2466_2"
+                     /protein_end="200"
+                     /protein_start="40"
+                     /score="47.5"
+                     /tool="antismash"
+                     /translation="LVTGASRGIGRAVALRLAGMGYHVLVNYLANAAAAEETLALIRRQ
+                     GGEGELLPFDVADREAAERALGGWLEAHPDEAVEVLVNNAGIRRDGLLLWMPHEDWYGV
+                     LRTHLDGFFHVTQPLLKGMLVRKYGRIINIVSLSGIKGLPGQVNYSAAKGGLIAATR"
+     aSModule        1196..1675
+                     /domains="nrpspksdomains_ctg2466_2_PKS_KR.1"
+                     /incomplete
+                     /locus_tags="ctg2466_2"
+                     /tool="antismash"
+                     /type="unknown"
+     CDS_motif       complement(1613..1675)
+                     /aSTool="nrps_pks_domains"
+                     /database="abmotifs"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksmotif_ctg2466_2_0001"
+                     /evalue="5.50E-04"
+                     /label="PKSI-KR_m1"
+                     /locus_tag="ctg2466_2"
+                     /protein_end="61"
+                     /protein_start="40"
+                     /score="12.6"
+                     /tool="antismash"
+                     /translation="LVTGASRGIGRAVALRLAGMGY"
+ORIGIN
+        1 agaaggcgct cagcgcgtcg aagttgccca ccgagaagag gttgacctcc tcggcgccgc
+       61 cgcagacgac gcactgctgc agcccctggc ggatgagcag gtaggccatg ccgatggcgt
+      121 gcgagccgct ggcgcaggcc cccgagacgg tgaagttgat gccccgcagg ttgaagatgg
+      181 tcgagaggtt catcgtcacc gtcgagttca tcgactggaa gatgttgccc gagccgacga
+      241 gcaccgtgtt gtgcttctcg cggatgacgt cggcgccgtg gatgacggcc tcggcgctgc
+      301 tgtcgttgcc gtagaggatt ccggtctcgt gggcgagcag ccagtcggtg tcgatgcccg
+      361 cctgggcgag cgcttcggcg gtagcgacgt aggcgtaggc cccctgctcc gagaggcaca
+      421 tccgctggcg gcggtcgagc gccttgcgca ggtcgggttt gcggaggatg ccggtgagag
+      481 cggagcggta gcccatctcc ttgcgtgcgg ggtcgaggcc gatgcccgag cggccgcagt
+      541 agagcgactc ggcaacctgc tcgcggtttt caccgatgca ggagtagatg cccatgcccg
+      601 tgatgacgac tctgtgttgt tccattgctt gcgtgtatag ccttgtttgc ctgtgtacag
+      661 gttccttttt ggtttgtttt ctcattctgg tccggtccgg ctcttcttat aaagttgcgg
+      721 cccggtccgg tctggcctta tcccggtctt ccccggcctg cccggtcttt ttctgccttt
+      781 tcccagtctg tcctgcccgg ttcagcctcg gtttgcccgg tctcccccgg cctgcccggt
+      841 tcagcctcgg tttgcccggc ctctccggcc cggttccggt cttttccggc ccgtctctta
+      901 aaaaattgcg gcccggcccc tttcggtccc cggcggccat ttccgccctc cccggcgcgg
+      961 gtcagaggat gcctccgttg atggagatga cctcgccggt gatgtaggag gccttctccg
+     1021 aggcgaggaa ggccaccagg tcggccacct cctccggctc gccgaagcgt ccggcgggga
+     1081 tggtacgccg cagcgccgcc tcgtccaggt cggccgtcat gtcggtgcgg atgaagcccg
+     1141 gggcgacggc gttgaccgtc acccgcttct tggccacctc ctgggccagc gcccgcgtgg
+     1201 cggcgatgag tccccccttg gccgccgagt agttgacctg cccggggagc cccttgatgc
+     1261 ccgagagcga gacgatgttg atgatgcgtc cgtacttgcg gacgagcatc cccttgagca
+     1321 gcggctgcgt gacgtggaag aatccgtcga ggtgggtgcg cagcacgccg taccagtcct
+     1381 cgtggggcat ccacagcagc agcccgtcgc ggcggattcc ggcgttgttg accagcacct
+     1441 cgaccgcctc gtcgggatgc gcctcgagcc agccgcccag ggcgcgctcc gcggcctcgc
+     1501 ggtcggccac gtcgaagggg agcagctcgc cctcgccccc ttgccggcga atgagcgcaa
+     1561 gggtctcctc ggcggcggcc gcattcgcaa ggtagttgac cagcacatgg tagcccatgc
+     1621 cggccagacg cagcgccacg gcgcgtccga tgccgcggct tgcccccgtc acgagggcgt
+     1681 atcgtctctt ctggttcgtc tccatattat ccgtaatcgg agcgggcggt tcccgttgcg
+     1741 gggttccgca cgctccgtgt ttgttttccg tcgtttcgct ccggtccggc tctccg
+//

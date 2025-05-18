@@ -1,0 +1,110 @@
+LOCUS       c01685_NODE_16..        1486 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  NODE_1685_length_1486_cov_1.677076.
+ACCESSION   c01685_NODE_16..
+VERSION     c01685_NODE_16..
+KEYWORDS    .
+SOURCE      
+  ORGANISM  
+            .
+COMMENT     ##antiSMASH-Data-START##
+            Version      :: 5.1.2
+            Run date     :: 2021-04-09 18:31:37
+            Original ID  :: NODE_1685_length_1486_cov_1.677076
+            NOTE: This is a single cluster extracted from a larger record!
+            Orig. start  :: 0
+            Orig. end    :: 1486
+            ##antiSMASH-Data-END##
+FEATURES             Location/Qualifiers
+     protocluster    1..1486
+                     /aStool="rule-based-clusters"
+                     /contig_edge="True"
+                     /core_location="[2:1485]"
+                     /cutoff="20000"
+                     /detection_rule="((LANC_like and (Lant_dehydr_N or
+                     Lant_dehydr_C) or cds(LANC_like and (Pkinase or DUF4135)))
+                     and not (YcaO or TIGR03882))"
+                     /neighbourhood="10000"
+                     /product="lanthipeptide"
+                     /protocluster_number="1"
+                     /tool="antismash"
+     proto_core      3..1485
+                     /aStool="rule-based-clusters"
+                     /tool="antismash"
+                     /cutoff="20000"
+                     /detection_rule="((LANC_like and (Lant_dehydr_N or
+                     Lant_dehydr_C) or cds(LANC_like and (Pkinase or DUF4135)))
+                     and not (YcaO or TIGR03882))"
+                     /neighbourhood="10000"
+                     /product="lanthipeptide"
+                     /protocluster_number="1"
+     cand_cluster    1..1486
+                     /candidate_cluster_number="1"
+                     /contig_edge="True"
+                     /detection_rules="((LANC_like and (Lant_dehydr_N or
+                     Lant_dehydr_C) or cds(LANC_like and (Pkinase or DUF4135)))
+                     and not (YcaO or TIGR03882))"
+                     /kind="single"
+                     /product="lanthipeptide"
+                     /protoclusters="1"
+                     /tool="antismash"
+     region          1..1486
+                     /candidate_cluster_numbers="1"
+                     /contig_edge="True"
+                     /product="lanthipeptide"
+                     /region_number="1"
+                     /rules="((LANC_like and (Lant_dehydr_N or Lant_dehydr_C) or
+                     cds(LANC_like and (Pkinase or DUF4135))) and not (YcaO or
+                     TIGR03882))"
+                     /tool="antismash"
+     CDS             complement(3..1019)
+                     /gene_functions="biosynthetic (rule-based-clusters)
+                     lanthipeptide: LANC_like"
+                     /gene_kind="biosynthetic"
+                     /locus_tag="ctg1685_1"
+                     /sec_met_domain="LANC_like (E-value: 2.9e-35, bitscore:
+                     108.7, seeds: 47, tool: rule-based-clusters)"
+                     /transl_table=11
+                     /translation="MKTRIEHKIHEIADVLFRDMKDGKLDNEGVGLLAGQTGIIIFCKL
+                     YLQVFPNSEQEEILEGFLETYFDKLTSEIGLLTYCGGFTGALEGLKYLNRERLLEIDYS
+                     DVEKNYRELLQTFAINSILNGNYDYLHGGLGVVKYYCDDAEFVNRVLEALEQTAEKGDR
+                     VYKWKSSLGLDRGVGYNICLSHGMSSIVSVLSLLESEGIDREKRDRIIRNTCNYILSQE
+                     IDPQQHGNYFPSQSLENDPEQINHQSRLGWCYGDLGVATSLWQAGKVLHNREWQEKALE
+                     VLRFSTSRRDFRNAGIIDAGLCHGAASVCMMFHYVYMQTGEKLFEETRDYWLDGTLEL"
+     CDS             complement(1045..1485)
+                     /gene_functions="biosynthetic (rule-based-clusters)
+                     lanthipeptide: Lant_dehydr_C"
+                     /gene_kind="biosynthetic"
+                     /locus_tag="ctg1685_2"
+                     /sec_met_domain="Lant_dehydr_C (E-value: 1.4e-18, bitscore:
+                     54.5, seeds: 35, tool: rule-based-clusters)"
+                     /transl_table=11
+                     /translation="LLDDTMTAFGKTPDEKKTLFSRMAENFKKEFGFTSHSFTKQINDK
+                     YRRYRADIEKALSDREMFTDYEAILQPRKSEIGKVAAEISRIQSSGLAAPTIDELLGSI
+                     SHMTMNRWFRTNNRQFELVIYDFLTKYFESAIARTKRLAEKQ"
+ORIGIN
+        1 cctaattcca aggtaccgtc aagccaataa tcacgggttt cttcaaacag tttttcaccg
+       61 gtttgcatat acacatagtg aaacatcata cacacgcttg cagctccatg acataaaccg
+      121 gcatcgataa taccggcatt tcggaaatcc ctgcgcgaag tcgaaaaccg cagcacctcc
+      181 aacgcttttt cctgccattc ccggttatgc aacacttttc ctgcctgcca caacgatgtc
+      241 gctacaccca aatcgccata gcaccaaccc aaacgacttt gatgatttat ttgctccgga
+      301 tcgttctcta atgattgact gggaaaataa ttgccgtgtt gttgcggatc gatctcctgg
+      361 gacagaatat aattacaagt attcctgatg atccgatccc gtttctcccg atcgatccct
+      421 tcgctttcca acaagctcaa tacggatact atactcgaca tcccgtgcga caggcagata
+      481 ttgtatccga cgcctctgtc cagtcccagc gaagatttcc atttatagac tctatctcct
+      541 ttttcagcgg tttgctccaa cgcctccaat acccggttta caaactctgc gtcgtcgcaa
+      601 taatatttga cgacacccag tccaccatgc aggtagtcgt aattcccgtt tagaatactg
+      661 tttatcgcga atgtttgcag caattctcgg tagtttttct ccacatcgga atagtcgatc
+      721 tccaacaacc gctcgcggtt caggtatttc aaaccctcca aagcgccggt aaatccgccg
+      781 cagtatgtca ataatcctat ttcggaggtt aatttgtcga aatacgtttc gaggaagccc
+      841 tctaaaattt cctcttgctc cgaattggga aatacttgca gatagagttt gcagaagata
+      901 atgatgccgg tctgtccggc cagcaacccg acaccttcgt tgtcgagttt accgtctttc
+      961 atatcccgaa acagcacatc ggctatttca tggattttat gttcgattct cgttttcatt
+     1021 tttaccgaat agggatgaat actttcattg tttttccgca agccgctttg tccgtgcgat
+     1081 cgccgactcg aaatacttgg ttaaaaagtc ataaataacc aattcgaact gccggttatt
+     1141 ggtacggaac caacggttca tcgtcatgtg cgaaatgctg cccagcaact cgtcgatcgt
+     1201 aggtgccgcc aggccggagg attggattcg ggaaatttcc gcagctactt tcccgatttc
+     1261 cgacttgcga ggttgtaata tggcttcata atccgtaaac atctcgcggt cggacaacgc
+     1321 tttttcgatg tccgctcggt aacggcggta cttatcattg atctgtttcg tgaacgaatg
+     1381 cgaggtgaat ccgaactcct tcttgaaatt ttcggccatc cgggaaaaca gcgttttctt
+     1441 ctcgtccggt gtttttccga aggcggtcat cgtatcatcc agtaat
+//

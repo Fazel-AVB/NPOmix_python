@@ -1,0 +1,130 @@
+LOCUS       WWGP01000659.1          1114 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  WWGP01000659.1 Amycolatopsis sp. SID8362 SID8362.c704, whole genome
+            shotgun sequence.
+ACCESSION   WWGP01000659
+VERSION     WWGP01000659.1
+KEYWORDS    .
+SOURCE      
+  ORGANISM  
+            .
+COMMENT     ##antiSMASH-Data-START##
+            Version      :: 5.1.2
+            Run date     :: 2021-04-12 12:25:17
+            NOTE: This is a single cluster extracted from a larger record!
+            Orig. start  :: 0
+            Orig. end    :: 1114
+            ##antiSMASH-Data-END##
+FEATURES             Location/Qualifiers
+     protocluster    1..1114
+                     /aStool="rule-based-clusters"
+                     /contig_edge="True"
+                     /core_location="[726:1113](+)"
+                     /cutoff="20000"
+                     /detection_rule="(hglE or hglD)"
+                     /neighbourhood="20000"
+                     /product="hglE-KS"
+                     /protocluster_number="1"
+                     /tool="antismash"
+     proto_core      727..1113
+                     /aStool="rule-based-clusters"
+                     /tool="antismash"
+                     /cutoff="20000"
+                     /detection_rule="(hglE or hglD)"
+                     /neighbourhood="20000"
+                     /product="hglE-KS"
+                     /protocluster_number="1"
+     cand_cluster    1..1114
+                     /candidate_cluster_number="1"
+                     /contig_edge="True"
+                     /detection_rules="(hglE or hglD)"
+                     /kind="single"
+                     /product="hglE-KS"
+                     /protoclusters="1"
+                     /tool="antismash"
+     region          1..1114
+                     /candidate_cluster_numbers="1"
+                     /contig_edge="True"
+                     /product="hglE-KS"
+                     /region_number="1"
+                     /rules="(hglE or hglD)"
+                     /tool="antismash"
+     CDS             2..730
+                     /NRPS_PKS="Domain: PKS_KR (25-189). E-value: 6.9e-33.
+                     Score: 105.8. Matches aSDomain:
+                     nrpspksdomains_ctg1133_1_PKS_KR.1"
+                     /NRPS_PKS="type: other"
+                     /locus_tag="ctg1133_1"
+                     /transl_table=11
+                     /translation="ASGCRIELAGRTPWPGEPDDLPADPAAMRAVLAGRGGSVADIERR
+                     VRTVLAQREIGRTLGEIRAAGGNPAYTELDVRDPEAVHHLVKGLRGRVDGVVFAAGVLD
+                     DKLMADKDEQSFRTVFETKADGARTLLAALAETGAEPGFVTFFGSIAAVLGNRGQTDYA
+                     AANDALESLAKTWPGRAVTVHWGPWAPAPDHSGMVSPELAREYERRDIGLLDADEGVAA
+                     LLRELAYGTDRAVLYTASLW"
+     aSDomain        77..568
+                     /aSDomain="PKS_KR"
+                     /aSTool="nrps_pks_domains"
+                     /database="nrpspksdomains.hmm"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksdomains_ctg1133_1_PKS_KR.1"
+                     /evalue="6.90E-33"
+                     /label="ctg1133_1_PKS_KR.1"
+                     /locus_tag="ctg1133_1"
+                     /protein_end="189"
+                     /protein_start="25"
+                     /score="105.8"
+                     /tool="antismash"
+                     /translation="AAMRAVLAGRGGSVADIERRVRTVLAQREIGRTLGEIRAAGGNPA
+                     YTELDVRDPEAVHHLVKGLRGRVDGVVFAAGVLDDKLMADKDEQSFRTVFETKADGART
+                     LLAALAETGAEPGFVTFFGSIAAVLGNRGQTDYAAANDALESLAKTWPGRAVTVHWGPW
+                     AP"
+     aSModule        77..568
+                     /domains="nrpspksdomains_ctg1133_1_PKS_KR.1"
+                     /incomplete
+                     /locus_tags="ctg1133_1"
+                     /tool="antismash"
+                     /type="unknown"
+     CDS_motif       428..523
+                     /aSTool="nrps_pks_domains"
+                     /database="abmotifs"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksmotif_ctg1133_1_0001"
+                     /evalue="1.30E-14"
+                     /label="PKSI-KR_m4"
+                     /locus_tag="ctg1133_1"
+                     /protein_end="174"
+                     /protein_start="142"
+                     /score="46.6"
+                     /tool="antismash"
+                     /translation="FVTFFGSIAAVLGNRGQTDYAAANDALESLAKT"
+     CDS             727..1113
+                     /gene_functions="biosynthetic (rule-based-clusters)
+                     hglE-KS: hglE"
+                     /gene_kind="biosynthetic"
+                     /locus_tag="ctg1133_2"
+                     /sec_met_domain="hglE (E-value: 5.6e-30, bitscore: 91.3,
+                     seeds: 4, tool: rule-based-clusters)"
+                     /transl_table=11
+                     /translation="VSQEPVAITGMGVFLPGASTVDQYWRNLVAGVDAVTELPPHRRDP
+                     AFHGHDGTAPDRTHGRRGGFTADILEFDPVAHGVPPTSLDGTEPDQLTALAVAVTAVED
+                     AGGPGRLGDPERIGVVLGRGGYLSP"
+ORIGIN
+        1 cgcgtccggt tgccggatcg aactcgccgg gcgcacgccg tggccgggcg agccggacga
+       61 cctgcccgcc gaccccgccg cgatgcgggc ggtgctggcc gggcgcggtg gttcggtggc
+      121 cgacatcgaa cgccgggtgc ggaccgtgct ggcccagcgt gagatcggcc ggacactcgg
+      181 cgagatccgc gccgcgggcg ggaacccggc ctacaccgaa ctcgacgtgc gggacccgga
+      241 agccgtgcac cacctggtca agggcctccg cggccgggtc gacggcgtcg tcttcgccgc
+      301 gggcgtgctc gacgacaagc tcatggcgga caaggacgag cagtcgttcc ggaccgtctt
+      361 cgagaccaaa gcggacggtg cccgcacgct gctcgccgcg ctggcggaga ccggcgccga
+      421 gcctggattc gtcaccttct tcggcagcat cgccgcggtc ctgggcaatc gcggccagac
+      481 cgactacgcc gccgcgaacg acgcgctcga gtcgctggcg aagacctggc ccggccgggc
+      541 ggtgaccgtc cactggggac cgtgggcacc cgcgcccgac cacagcggca tggtctcgcc
+      601 ggagctggcc cgcgagtacg aacgccggga catcggcctg ctcgacgcgg acgagggcgt
+      661 cgcggccctg ctgcgcgaac tcgcctacgg cacggaccgc gccgtcctgt acacggcgtc
+      721 gttgtggtga gccaggagcc ggtggcgatc accggcatgg gcgtgttcct gcccggtgcg
+      781 tccacagtgg accagtactg gcggaacctg gtggccggtg tcgacgccgt caccgagctc
+      841 ccgccgcacc gccgcgaccc cgcgttccac ggccacgacg gcaccgcgcc cgaccggacc
+      901 cacggccgcc gcggcggctt caccgcggac atcctggagt tcgacccggt cgcgcacggc
+      961 gtgccaccga catctctcga cggcaccgag ccggaccagc tcaccgcgct ggccgtcgcc
+     1021 gtcaccgcgg tcgaggacgc cggcggcccc ggccggctcg gcgaccccga acggatcggc
+     1081 gtcgtgctcg gccgcggcgg ctacctctcg cccg
+//

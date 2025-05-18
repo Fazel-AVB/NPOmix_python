@@ -1,0 +1,148 @@
+LOCUS       c00429_JAAHIB0..        1101 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  JAAHIB010001384.1 Kamptonema sp. SIO4C4 4C4_NODE_1384, whole genome
+            shotgun sequence.
+ACCESSION   JAAHIB010001384
+VERSION     JAAHIB010001384
+KEYWORDS    .
+SOURCE      
+  ORGANISM  
+            .
+COMMENT     ##antiSMASH-Data-START##
+            Version      :: 5.1.2
+            Run date     :: 2021-04-12 12:39:17
+            Original ID  :: JAAHIB010001384.1
+            NOTE: This is a single cluster extracted from a larger record!
+            Orig. start  :: 0
+            Orig. end    :: 1101
+            ##antiSMASH-Data-END##
+FEATURES             Location/Qualifiers
+     CDS             complement(1..249)
+                     /gene_functions="biosynthetic-additional
+                     (rule-based-clusters) PKS_KS"
+                     /gene_functions="biosynthetic-additional
+                     (rule-based-clusters) hyb_KS"
+                     /gene_functions="biosynthetic-additional
+                     (rule-based-clusters) tra_KS"
+                     /gene_kind="biosynthetic-additional"
+                     /locus_tag="ctg429_1"
+                     /sec_met_domain="PKS_KS (E-value: 5.4e-18, bitscore: 52.1,
+                     seeds: 2284, tool: rule-based-clusters)"
+                     /sec_met_domain="hyb_KS (E-value: 3.4e-18, bitscore: 52.7,
+                     seeds: 33, tool: rule-based-clusters)"
+                     /sec_met_domain="tra_KS (E-value: 1e-21, bitscore: 64.4,
+                     seeds: 44, tool: rule-based-clusters)"
+                     /transl_table=11
+                     /translation="MEQQTNGLEVAIIGISGRFPGSKNLETFWENLTNGTELVTAFTNS
+                     ESSGNRMIKAGGVLPDIDLFDANFFGFNPREAEMPIIA"
+     protocluster    1..1101
+                     /aStool="rule-based-clusters"
+                     /contig_edge="True"
+                     /core_location="[335:1100](-)"
+                     /cutoff="0"
+                     /detection_rule="cds((PP-binding or NAD_binding_4) and
+                     (AMP-binding or A-OX))"
+                     /neighbourhood="20000"
+                     /product="NRPS-like"
+                     /protocluster_number="1"
+                     /tool="antismash"
+     proto_core      complement(336..1100)
+                     /aStool="rule-based-clusters"
+                     /tool="antismash"
+                     /cutoff="0"
+                     /detection_rule="cds((PP-binding or NAD_binding_4) and
+                     (AMP-binding or A-OX))"
+                     /neighbourhood="20000"
+                     /product="NRPS-like"
+                     /protocluster_number="1"
+     cand_cluster    1..1101
+                     /candidate_cluster_number="1"
+                     /contig_edge="True"
+                     /detection_rules="cds((PP-binding or NAD_binding_4) and
+                     (AMP-binding or A-OX))"
+                     /kind="single"
+                     /product="NRPS-like"
+                     /protoclusters="1"
+                     /tool="antismash"
+     region          1..1101
+                     /candidate_cluster_numbers="1"
+                     /contig_edge="True"
+                     /product="NRPS-like"
+                     /region_number="1"
+                     /rules="cds((PP-binding or NAD_binding_4) and (AMP-binding
+                     or A-OX))"
+                     /tool="antismash"
+     CDS             complement(336..1100)
+                     /NRPS_PKS="Domain: PCP (149-221). E-value: 3.1e-18. Score:
+                     57.6. Matches aSDomain: nrpspksdomains_ctg429_2_PCP.1"
+                     /NRPS_PKS="type: other"
+                     /gene_functions="biosynthetic (rule-based-clusters)
+                     NRPS-like: AMP-binding"
+                     /gene_functions="biosynthetic (rule-based-clusters)
+                     NRPS-like: PP-binding"
+                     /gene_kind="biosynthetic"
+                     /locus_tag="ctg429_2"
+                     /sec_met_domain="AMP-binding (E-value: 3.1e-23, bitscore:
+                     69.0, seeds: 400, tool: rule-based-clusters)"
+                     /sec_met_domain="PP-binding (E-value: 7.8e-16, bitscore:
+                     45.7, seeds: 164, tool: rule-based-clusters)"
+                     /transl_table=11
+                     /translation="SFLTHPRTGERIYRTGDLGRYLPDGNIEFLGRVDLQLKIRGHRIE
+                     AGEIEATLTQHPALKTAVVVAIEKQQREYLVAYLVSQSSVPPAITELRCFLEDRLPEYM
+                     IPAAFAFLDALPLSANGKINRRQLAEQEYLDEIITATYVAPQNNLETKIAAVWQKVLGL
+                     EKVGINDNFFDVGGDSLLIAQVFNELNNTLPNETKDISFIEMYKYTTIASLAKYLERRG
+                     STTVDLSQNKPETKNKFRKRHLQRRLNKSKLN"
+     aSDomain        complement(438..653)
+                     /aSDomain="PCP"
+                     /aSTool="nrps_pks_domains"
+                     /database="nrpspksdomains.hmm"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksdomains_ctg429_2_PCP.1"
+                     /evalue="3.10E-18"
+                     /label="ctg429_2_PCP.1"
+                     /locus_tag="ctg429_2"
+                     /protein_end="221"
+                     /protein_start="149"
+                     /score="57.6"
+                     /tool="antismash"
+                     /translation="ETKIAAVWQKVLGLEKVGINDNFFDVGGDSLLIAQVFNELNNTLP
+                     NETKDISFIEMYKYTTIASLAKYLERRG"
+     aSModule        438..653
+                     /domains="nrpspksdomains_ctg429_2_PCP.1"
+                     /incomplete
+                     /locus_tags="ctg429_2"
+                     /tool="antismash"
+                     /type="unknown"
+     CDS_motif       complement(951..1016)
+                     /aSTool="nrps_pks_domains"
+                     /database="abmotifs"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksmotif_ctg429_2_0001"
+                     /evalue="1.80E-10"
+                     /label="NRPS-A_a8"
+                     /locus_tag="ctg429_2"
+                     /protein_end="50"
+                     /protein_start="28"
+                     /score="32.9"
+                     /tool="antismash"
+                     /translation="FLGRVDLQLKIRGHRIEAGEIEA"
+ORIGIN
+        1 tgcaattatt ggcatttcgg cttctctggg attgaagcca aagaaattcg catcaaataa
+       61 atcaatatct ggcagtacgc cccctgcttt tatcattcta ttcccagagg attcggaatt
+      121 ggtaaaagct gtgactagtt cagtcccatt tgtcagattt tcccaaaaag tttctagatt
+      181 cttactaccg ggaaaacgcc ccgaaatgcc aataattgct acttctaaac cgtttgtttg
+      241 ctgttccatt tttctaaatt aagttcaaga gttgagtata aattggattt gcttttgatc
+      301 acaagccaaa gtaatatctg accagcttga attagctagt tgagttttga cttatttaat
+      361 cgccgttgca aatggcgttt tctgaatttg tttttggttt ctggtttatt ttgtgaaagg
+      421 tctacagtag tagaaccccg tctttctaaa tactttgcta aagaagcgat tgtcgtatac
+      481 ttatacattt ctatgaatga aatgtcttta gtttcgttgg gcaaagtatt attcagttcg
+      541 ttgaaaactt gggcaattag taatgaatct ccaccaacat caaaaaaatt atcattgatg
+      601 ccaactttct ctaatcctaa aactttttgc caaaccgcag cgattttagt ttccagattg
+      661 ttttgcggtg ctacataagt tgctgttatg atctcatcta agtattcttg ttcggcaagc
+      721 tgacggcgat tgattttgcc attggcagaa aggggtaaag catcgagaaa agcaaaagcg
+      781 gcgggaatca tatattctgg caagcgatcc tcaagaaaac agcgtaactc ggtgatcgct
+      841 ggtggaactg aagactgaga aactaagtag gctaccaaat attctcgctg ctgtttttcg
+      901 atggcaacca cgactgctgt tttgagggca gggtgctggg tcaaggttgc ctcgatttct
+      961 cctgcttcaa tgcggtgtcc gcgaatttta agttgtaagt ctactctgcc tagaaattca
+     1021 atgttaccgt caggtaaata gcgtcctaaa tcaccggtgc gataaattct ttcacctgtg
+     1081 cggggatgag tcagaaaact a
+//

@@ -1,0 +1,230 @@
+LOCUS       c02049_NODE_20..        1433 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  NODE_2049_length_1433_cov_2.541298.
+ACCESSION   c02049_NODE_20..
+VERSION     c02049_NODE_20..
+KEYWORDS    .
+SOURCE      
+  ORGANISM  
+            .
+COMMENT     ##antiSMASH-Data-START##
+            Version      :: 5.1.2
+            Run date     :: 2021-04-09 17:15:45
+            Original ID  :: NODE_2049_length_1433_cov_2.541298
+            NOTE: This is a single cluster extracted from a larger record!
+            Orig. start  :: 0
+            Orig. end    :: 1433
+            ##antiSMASH-Data-END##
+FEATURES             Location/Qualifiers
+     protocluster    1..1433
+                     /aStool="rule-based-clusters"
+                     /contig_edge="True"
+                     /core_location="[732:1431](-)"
+                     /cutoff="0"
+                     /detection_rule="cds((PP-binding or NAD_binding_4) and
+                     (AMP-binding or A-OX))"
+                     /neighbourhood="20000"
+                     /product="NRPS-like"
+                     /protocluster_number="1"
+                     /tool="antismash"
+     proto_core      complement(733..1431)
+                     /aStool="rule-based-clusters"
+                     /tool="antismash"
+                     /cutoff="0"
+                     /detection_rule="cds((PP-binding or NAD_binding_4) and
+                     (AMP-binding or A-OX))"
+                     /neighbourhood="20000"
+                     /product="NRPS-like"
+                     /protocluster_number="1"
+     cand_cluster    1..1433
+                     /candidate_cluster_number="1"
+                     /contig_edge="True"
+                     /detection_rules="cds((PP-binding or NAD_binding_4) and
+                     (AMP-binding or A-OX))"
+                     /kind="single"
+                     /product="NRPS-like"
+                     /protoclusters="1"
+                     /tool="antismash"
+     region          1..1433
+                     /candidate_cluster_numbers="1"
+                     /contig_edge="True"
+                     /product="NRPS-like"
+                     /region_number="1"
+                     /rules="cds((PP-binding or NAD_binding_4) and (AMP-binding
+                     or A-OX))"
+                     /tool="antismash"
+     aSDomain        complement(3..701)
+                     /aSDomain="PKS_KS"
+                     /aSTool="nrps_pks_domains"
+                     /database="nrpspksdomains.hmm"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksdomains_ctg2049_1_PKS_KS.1"
+                     /evalue="5.00E-62"
+                     /label="ctg2049_1_PKS_KS.1"
+                     /locus_tag="ctg2049_1"
+                     /protein_end="240"
+                     /protein_start="7"
+                     /score="201.9"
+                     /tool="antismash"
+                     /translation="IAIVGMNCRYPGVHSVAAFETVLRTGCNILDPKVTPSNGHNHITL
+                     NNVYEHMAEFDANFFGYSRAEAEIMDPQQRVFLTCAWEMFEQSGYNPKQHDARVGLYAG
+                     VSTSFYLLTHLMNNPDKLAQLGGLQIMVGNDKDHLTSQLAYRLNITGPCVTVQASCATS
+                     LVAVHLACEGLLSGQCDMALAGGVTFRMEEQRSYESHGDGLQAEDGLIHTFDAQASGTV
+                     YSSGLGMVLLK"
+     aSModule        3..701
+                     /domains="nrpspksdomains_ctg2049_1_PKS_KS.1"
+                     /incomplete
+                     /locus_tags="ctg2049_1"
+                     /tool="antismash"
+                     /type="pks"
+     CDS             complement(3..722)
+                     /NRPS_PKS="Domain: PKS_KS(Hybrid-KS) (7-240). E-value:
+                     5e-62. Score: 201.9. Matches aSDomain:
+                     nrpspksdomains_ctg2049_1_PKS_KS.1"
+                     /NRPS_PKS="type: PKS/NRPS-like protein"
+                     /gene_functions="biosynthetic-additional
+                     (rule-based-clusters) PKS_KS"
+                     /gene_functions="biosynthetic-additional
+                     (rule-based-clusters) mod_KS"
+                     /gene_functions="biosynthetic-additional
+                     (rule-based-clusters) hyb_KS"
+                     /gene_functions="biosynthetic-additional
+                     (rule-based-clusters) itr_KS"
+                     /gene_functions="biosynthetic-additional
+                     (rule-based-clusters) tra_KS"
+                     /gene_kind="biosynthetic-additional"
+                     /locus_tag="ctg2049_1"
+                     /sec_met_domain="PKS_KS (E-value: 1.9e-63, bitscore: 201.9,
+                     seeds: 2284, tool: rule-based-clusters)"
+                     /sec_met_domain="mod_KS (E-value: 2.2e-53, bitscore: 168.6,
+                     seeds: 217, tool: rule-based-clusters)"
+                     /sec_met_domain="hyb_KS (E-value: 3e-63, bitscore: 201.1,
+                     seeds: 33, tool: rule-based-clusters)"
+                     /sec_met_domain="itr_KS (E-value: 9.5e-48, bitscore: 150.0,
+                     seeds: 96, tool: rule-based-clusters)"
+                     /sec_met_domain="tra_KS (E-value: 4.6e-61, bitscore: 194.0,
+                     seeds: 44, tool: rule-based-clusters)"
+                     /transl_table=11
+                     /translation="MTYSESDIAIVGMNCRYPGVHSVAAFETVLRTGCNILDPKVTPSN
+                     GHNHITLNNVYEHMAEFDANFFGYSRAEAEIMDPQQRVFLTCAWEMFEQSGYNPKQHDA
+                     RVGLYAGVSTSFYLLTHLMNNPDKLAQLGGLQIMVGNDKDHLTSQLAYRLNITGPCVTV
+                     QASCATSLVAVHLACEGLLSGQCDMALAGGVTFRMEEQRSYESHGDGLQAEDGLIHTFD
+                     AQASGTVYSSGLGMVLLK"
+     CDS_motif       complement(24..62)
+                     /aSTool="nrps_pks_domains"
+                     /database="abmotifs"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksmotif_ctg2049_1_0003"
+                     /evalue="3.00E-02"
+                     /label="PKSI-KS_m4"
+                     /locus_tag="ctg2049_1"
+                     /protein_end="233"
+                     /protein_start="220"
+                     /score="7.9"
+                     /tool="antismash"
+                     /translation="FDAQASGTVYSSGL"
+     CDS_motif       complement(204..251)
+                     /aSTool="nrps_pks_domains"
+                     /database="abmotifs"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksmotif_ctg2049_1_0002"
+                     /evalue="2.10E-04"
+                     /label="PKSI-KS_m3"
+                     /locus_tag="ctg2049_1"
+                     /protein_end="173"
+                     /protein_start="157"
+                     /score="13.8"
+                     /tool="antismash"
+                     /translation="GPCVTVQASCATSLVAV"
+     CDS_motif       complement(501..539)
+                     /aSTool="nrps_pks_domains"
+                     /database="abmotifs"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksmotif_ctg2049_1_0001"
+                     /evalue="2.90E+00"
+                     /label="PKSI-KS_m4"
+                     /locus_tag="ctg2049_1"
+                     /protein_end="74"
+                     /protein_start="61"
+                     /score="2.1"
+                     /tool="antismash"
+                     /translation="FDANFFGYSRAEAE"
+     CDS             complement(733..1431)
+                     /NRPS_PKS="Domain: PCP (131-199). E-value: 1.8e-17. Score:
+                     55.1. Matches aSDomain: nrpspksdomains_ctg2049_2_PCP.1"
+                     /NRPS_PKS="type: other"
+                     /gene_functions="biosynthetic (rule-based-clusters)
+                     NRPS-like: PP-binding"
+                     /gene_functions="biosynthetic (rule-based-clusters)
+                     NRPS-like: AMP-binding"
+                     /gene_kind="biosynthetic"
+                     /locus_tag="ctg2049_2"
+                     /sec_met_domain="AMP-binding (E-value: 3.4e-12, bitscore:
+                     32.6, seeds: 400, tool: rule-based-clusters)"
+                     /sec_met_domain="PP-binding (E-value: 1.7e-18, bitscore:
+                     54.2, seeds: 164, tool: rule-based-clusters)"
+                     /transl_table=11
+                     /translation="DGQVAFLGRNDTQVKVNGYRIELGEVKSHLEQLDSVGSAAVVCHQ
+                     GQLYAFITAAENLHPDDTDALLARVRAQLAVQLPYYLLPQHFFLLKVLPMTGNGKIDQA
+                     AMVQEVIQRMSQSTSQKSRALAHASPYEQQVAALWCEVLQREQIGLNDNFFEAGGGSIQ
+                     IVLLHRRIEEIFKVTVPIAELFRLTTVKRIAGYLQAMQDNARAVNQTQQRDASRSRAQQ
+                     RLVRRHQRQR"
+     aSDomain        complement(835..1038)
+                     /aSDomain="PCP"
+                     /aSTool="nrps_pks_domains"
+                     /database="nrpspksdomains.hmm"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksdomains_ctg2049_2_PCP.1"
+                     /evalue="1.80E-17"
+                     /label="ctg2049_2_PCP.1"
+                     /locus_tag="ctg2049_2"
+                     /protein_end="199"
+                     /protein_start="131"
+                     /score="55.1"
+                     /tool="antismash"
+                     /translation="EQQVAALWCEVLQREQIGLNDNFFEAGGGSIQIVLLHRRIEEIFK
+                     VTVPIAELFRLTTVKRIAGYLQAM"
+     aSModule        835..1038
+                     /domains="nrpspksdomains_ctg2049_2_PCP.1"
+                     /incomplete
+                     /locus_tags="ctg2049_2"
+                     /tool="antismash"
+                     /type="unknown"
+     CDS_motif       complement(1354..1416)
+                     /aSTool="nrps_pks_domains"
+                     /database="abmotifs"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksmotif_ctg2049_2_0001"
+                     /evalue="1.30E-11"
+                     /label="NRPS-A_a8"
+                     /locus_tag="ctg2049_2"
+                     /protein_end="26"
+                     /protein_start="5"
+                     /score="36.4"
+                     /tool="antismash"
+                     /translation="FLGRNDTQVKVNGYRIELGEVK"
+ORIGIN
+        1 cgtttgagca gcaccatgcc caaaccactg ctgtagaccg taccgctcgc ctgcgcatca
+       61 aaagtatgaa tcaggccatc ctctgcttgc agcccatcac cgtgcgattc atagctgcgc
+      121 tgctcctcca tgcgaaacgt gacgccaccc gctagcgcca tatcgcactg accgctcagc
+      181 agcccttcgc aggccagatg cactgccacc agcgaggtgg cacaactggc ctgaaccgtc
+      241 acgcaagggc cggtaatatt caggcggtaa gccagttggg acgtcaaatg atctttgtca
+      301 ttgccgacca tgatttggag accaccgagt tgtgcaagct tgtctgggtt gttcatcagg
+      361 tgagtaagca aatagaagct ggtactcacg cccgcatata ggccgacgcg cgcatcgtgc
+      421 tgcttcgggt tgtaaccgct ttgttcaaac atctcccaag cacaggtcag aaatacgcgc
+      481 tgctgtggat ccatgatttc tgcttctgca cggctgtagc caaaaaagtt ggcatcgaac
+      541 tccgccatgt gctcatagac gttgttcagc gtaatgtgat tgtggccgtt gctcggggtc
+      601 actttggggt ccaaaatgtt gcatccggtg cgaagcaccg tttcgaatgc cgcaacgctg
+      661 tgcacgccgg ggtaccggca gttcatgcca acaatggcaa tatcgctttc actgtaagtc
+      721 attagttttt ccttaacgct gacgctggtg acgacgtaca agtcgttgct gggcgcggga
+      781 tcgggaagca tcacgctgct gtgtttgatt caccgcccgt gcattgtcct gcatagcctg
+      841 caaataaccg gcaattcttt tcacggtggt taagcgaaat agctcagcaa taggtaccgt
+      901 aaccttaaaa atctcctcaa tacggcgatg caacagcacg atctggattg agccgccccc
+      961 cgcttcaaaa aagttgtcat tcagtccgat ctgttctcgt tgtagtacct cgcaccagag
+     1021 agcggccacc tgctgttcat agggcgaggc gtgcgcgagg gccctcgact tctgtgatgt
+     1081 agattgcgac atacgttgga taacctcttg aaccattgcc gcctgatcaa ttttgccgtt
+     1141 gcctgtcatc ggcagcacct tgagaagaaa gaaatgttgg ggcagcaggt aatacggcaa
+     1201 ctgcacggct aactgagcac gaacacgcgc taacagggcg tcagtatcgt caggatgcag
+     1261 gttttctgcg gcagtgataa aggcatacag ctgtccctgg tggcacacca cggcggcact
+     1321 ccctacgctg tcgagctgtt caaggtggct tttgacttcc cccagttcga tacggtaacc
+     1381 attcaccttc acttgggtat cgttgcgccc caaaaaggcg acttgcccgt cag
+//

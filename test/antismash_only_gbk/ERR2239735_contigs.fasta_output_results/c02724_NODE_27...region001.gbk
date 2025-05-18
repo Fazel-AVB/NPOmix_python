@@ -1,0 +1,208 @@
+LOCUS       c02724_NODE_27..        1281 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  NODE_2724_length_1281_cov_1.701827.
+ACCESSION   c02724_NODE_27..
+VERSION     c02724_NODE_27..
+KEYWORDS    .
+SOURCE      
+  ORGANISM  
+            .
+COMMENT     ##antiSMASH-Data-START##
+            Version      :: 5.1.2
+            Run date     :: 2021-04-09 16:09:23
+            Original ID  :: NODE_2724_length_1281_cov_1.701827
+            NOTE: This is a single cluster extracted from a larger record!
+            Orig. start  :: 0
+            Orig. end    :: 1281
+            ##antiSMASH-Data-END##
+FEATURES             Location/Qualifiers
+     protocluster    1..1281
+                     /aStool="rule-based-clusters"
+                     /contig_edge="True"
+                     /core_location="[1:1279](-)"
+                     /cutoff="0"
+                     /detection_rule="cds((PP-binding or NAD_binding_4) and
+                     (AMP-binding or A-OX))"
+                     /neighbourhood="20000"
+                     /product="NRPS-like"
+                     /protocluster_number="1"
+                     /tool="antismash"
+     proto_core      complement(2..1279)
+                     /aStool="rule-based-clusters"
+                     /tool="antismash"
+                     /cutoff="0"
+                     /detection_rule="cds((PP-binding or NAD_binding_4) and
+                     (AMP-binding or A-OX))"
+                     /neighbourhood="20000"
+                     /product="NRPS-like"
+                     /protocluster_number="1"
+     cand_cluster    1..1281
+                     /candidate_cluster_number="1"
+                     /contig_edge="True"
+                     /detection_rules="cds((PP-binding or NAD_binding_4) and
+                     (AMP-binding or A-OX))"
+                     /kind="single"
+                     /product="NRPS-like"
+                     /protoclusters="1"
+                     /tool="antismash"
+     region          1..1281
+                     /candidate_cluster_numbers="1"
+                     /contig_edge="True"
+                     /product="NRPS-like"
+                     /region_number="1"
+                     /rules="cds((PP-binding or NAD_binding_4) and (AMP-binding
+                     or A-OX))"
+                     /tool="antismash"
+     CDS             complement(2..1279)
+                     /NRPS_PKS="Domain: PCP (187-256). E-value: 2.6e-15. Score:
+                     48.2. Matches aSDomain: nrpspksdomains_ctg2724_1_PCP.1"
+                     /NRPS_PKS="Domain: Thioesterase (278-413). E-value:
+                     1.7e-37. Score: 121.8. Matches aSDomain:
+                     nrpspksdomains_ctg2724_1_Thioesterase.1"
+                     /NRPS_PKS="type: other"
+                     /gene_functions="biosynthetic (rule-based-clusters)
+                     NRPS-like: PP-binding"
+                     /gene_functions="biosynthetic (rule-based-clusters)
+                     NRPS-like: AMP-binding"
+                     /gene_kind="biosynthetic"
+                     /locus_tag="ctg2724_1"
+                     /sec_met_domain="AMP-binding (E-value: 1.6e-36, bitscore:
+                     111.8, seeds: 400, tool: rule-based-clusters)"
+                     /sec_met_domain="PP-binding (E-value: 1e-13, bitscore:
+                     37.9, seeds: 164, tool: rule-based-clusters)"
+                     /transl_table=11
+                     /translation="MMRPVPFGVAGDLYLTGIQLAQGYLGRPDLTASRFIADPFNVGER
+                     MYRTGDVARWLENGAVEYLGRSDDQLKIRGQRIELGEIDRVMQQLPDVEHAVAHACVFN
+                     QAAATGGDARQLVGYLVSQSGLPLDTAVLRERLREKLPAHMVPTVLLQLAELPLSANGK
+                     LDRKALPMPQLTSRVSGRAPRAGTETTIAQSFAALLDCEVNDVEADFFALGGHSLLAMK
+                     LAAQLSRIFERQVTPGQIMVASTVEQLSALLESNDDEQSQRLGFETLLPLRESHGPTLF
+                     CFHPASGFAWQFSVLSRYLSPQWSIMGIQSPRPDGPMQTAENLDSVCEHHLATLLSQQP
+                     HGPYYLLGYSLGGTLAQGIAARLHARGESVAFLGLLDTWPPETQNWQEKEANGLDPAVL
+                     AEIEREREAFLAAQQGNASEALFNAIE"
+     aSDomain        complement(41..445)
+                     /aSDomain="Thioesterase"
+                     /aSTool="nrps_pks_domains"
+                     /database="nrpspksdomains.hmm"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksdomains_ctg2724_1_Thioesterase.1"
+                     /evalue="1.70E-37"
+                     /label="ctg2724_1_Thioesterase.1"
+                     /locus_tag="ctg2724_1"
+                     /protein_end="413"
+                     /protein_start="278"
+                     /score="121.8"
+                     /tool="antismash"
+                     /translation="TLFCFHPASGFAWQFSVLSRYLSPQWSIMGIQSPRPDGPMQTAEN
+                     LDSVCEHHLATLLSQQPHGPYYLLGYSLGGTLAQGIAARLHARGESVAFLGLLDTWPPE
+                     TQNWQEKEANGLDPAVLAEIEREREAFLAAQQ"
+     aSModule        41..718
+                     /domains="nrpspksdomains_ctg2724_1_PCP.1"
+                     /domains="nrpspksdomains_ctg2724_1_Thioesterase.1"
+                     /final_module
+                     /incomplete
+                     /locus_tags="ctg2724_1"
+                     /tool="antismash"
+                     /type="unknown"
+     CDS_motif       complement(191..265)
+                     /aSTool="nrps_pks_domains"
+                     /database="abmotifs"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksmotif_ctg2724_1_0005"
+                     /evalue="3.60E-12"
+                     /label="NRPS-te1"
+                     /locus_tag="ctg2724_1"
+                     /protein_end="363"
+                     /protein_start="338"
+                     /score="38.6"
+                     /tool="antismash"
+                     /translation="QPHGPYYLLGYSLGGTLAQGIAARLH"
+     CDS_motif       complement(416..445)
+                     /aSTool="nrps_pks_domains"
+                     /database="abmotifs"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksmotif_ctg2724_1_0004"
+                     /evalue="6.10E-04"
+                     /label="NRPS-beforete1"
+                     /locus_tag="ctg2724_1"
+                     /protein_end="288"
+                     /protein_start="278"
+                     /score="12.7"
+                     /tool="antismash"
+                     /translation="TLFCFHPASGF"
+     aSDomain        complement(512..718)
+                     /aSDomain="PCP"
+                     /aSTool="nrps_pks_domains"
+                     /database="nrpspksdomains.hmm"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksdomains_ctg2724_1_PCP.1"
+                     /evalue="2.60E-15"
+                     /label="ctg2724_1_PCP.1"
+                     /locus_tag="ctg2724_1"
+                     /protein_end="256"
+                     /protein_start="187"
+                     /score="48.2"
+                     /tool="antismash"
+                     /translation="ETTIAQSFAALLDCEVNDVEADFFALGGHSLLAMKLAAQLSRIFE
+                     RQVTPGQIMVASTVEQLSALLESND"
+     CDS_motif       complement(599..643)
+                     /aSTool="nrps_pks_domains"
+                     /database="abmotifs"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksmotif_ctg2724_1_0003"
+                     /evalue="9.70E-01"
+                     /label="NRPS-te1"
+                     /locus_tag="ctg2724_1"
+                     /protein_end="227"
+                     /protein_start="212"
+                     /score="2.2"
+                     /tool="antismash"
+                     /translation="LGGHSLLAMKLAAQLS"
+     CDS_motif       complement(1031..1093)
+                     /aSTool="nrps_pks_domains"
+                     /database="abmotifs"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksmotif_ctg2724_1_0002"
+                     /evalue="4.10E-12"
+                     /label="NRPS-A_a8"
+                     /locus_tag="ctg2724_1"
+                     /protein_end="83"
+                     /protein_start="62"
+                     /score="38.0"
+                     /tool="antismash"
+                     /translation="YLGRSDDQLKIRGQRIELGEID"
+     CDS_motif       complement(1175..1264)
+                     /aSTool="nrps_pks_domains"
+                     /database="abmotifs"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksmotif_ctg2724_1_0001"
+                     /evalue="1.20E-14"
+                     /label="NRPS-A_a6"
+                     /locus_tag="ctg2724_1"
+                     /protein_end="35"
+                     /protein_start="5"
+                     /score="46.3"
+                     /tool="antismash"
+                     /translation="PFGVAGDLYLTGIQLAQGYLGRPDLTASRFI"
+ORIGIN
+        1 cttcgatagc gttaaataag gcctctgacg cattcccctg ctgcgccgcc agaaaggctt
+       61 cgcgttcacg ctcgatctcc gccagcaccg ctggatccag cccattggcc tctttttctt
+      121 gccagttttg cgtctctggc ggccaggtat ccaacagacc gaggaatgca accgactctc
+      181 ctctggcatg taagcgcgcg gcgatcccct gtgccagcgt gccacccagc gaataaccta
+      241 ataaatagta aggtccgtga ggttgttgac tgagcagcgt tgccaggtga tgttcgcata
+      301 ccgagtcgag attttccgcc gtttgcatcg ggccatccgg tcgtggcgac tgaataccca
+      361 taatcgacca ctgagggctg agataacgcg acagcacgct aaactgccag gcaaaacccg
+      421 acgccggatg gaagcagaac aacgttgggc cgtgactttc acgcagtggc aatagcgtct
+      481 cgaatcccag acgctgcgac tgttcatcat cattgctctc cagcaatgcg ctcagttgtt
+      541 ccacggtgga agccaccata atctgcccgg gcgtcacctg acgctcaaaa atgcggctca
+      601 actgcgctgc cagcttcatc gccagcagcg aatgcccacc aagcgcaaag aaatcagcct
+      661 ctacatcatt cacctcacaa tccagcaagg ccgcaaaaga ctgcgcgatg gtggtctcag
+      721 tccctgctcg cggtgcgcgc ccggaaacac gcgacgtcaa ctgcggcatc ggtagcgctt
+      781 tacgatccag tttaccgttc gcgctaagcg gcaactccgc cagttgtaac aataccgtcg
+      841 gtaccatgtg cgcaggcagt ttttcgcgca gacgttcccg caacacagcc gtatccagcg
+      901 gcaaacccga ttgcgacacc agatacccca caagttgacg cgcatcgccg cctgtcgccg
+      961 cagcctggtt gaatacgcag gcatgggcaa cggcatgctc gacatcaggc aactgctgca
+     1021 tcacccggtc aatctcgccg agctcaatgc gctgtccacg aattttaagc tggtcatcgc
+     1081 tgcgcccgag gtattccacc gcgccatttt ccagccagcg cgccacatct ccggtacggt
+     1141 acatacgttc accgacgtta aacggatcgg cgataaagcg gctcgccgtc agatccggac
+     1201 gccccagata gccttgcgcc agttggatcc ccgtcagata caggtcaccc gctacgccga
+     1261 aaggcaccgg gcgcatcatg g
+//

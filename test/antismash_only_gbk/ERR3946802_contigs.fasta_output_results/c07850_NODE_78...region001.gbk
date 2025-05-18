@@ -1,0 +1,128 @@
+LOCUS       c07850_NODE_78..        1021 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  NODE_7850_length_1021_cov_1.044492.
+ACCESSION   c07850_NODE_78..
+VERSION     c07850_NODE_78..
+KEYWORDS    .
+SOURCE      
+  ORGANISM  
+            .
+COMMENT     ##antiSMASH-Data-START##
+            Version      :: 5.1.2
+            Run date     :: 2021-01-16 02:27:52
+            Original ID  :: NODE_7850_length_1021_cov_1.044492
+            NOTE: This is a single cluster extracted from a larger record!
+            Orig. start  :: 0
+            Orig. end    :: 1021
+            ##antiSMASH-Data-END##
+FEATURES             Location/Qualifiers
+     protocluster    1..1021
+                     /aStool="rule-based-clusters"
+                     /contig_edge="True"
+                     /core_location="[1:277](+)"
+                     /cutoff="20000"
+                     /detection_rule="(APE_KS1 or APE_KS2)"
+                     /neighbourhood="20000"
+                     /product="arylpolyene"
+                     /protocluster_number="1"
+                     /tool="antismash"
+     proto_core      2..277
+                     /aStool="rule-based-clusters"
+                     /tool="antismash"
+                     /cutoff="20000"
+                     /detection_rule="(APE_KS1 or APE_KS2)"
+                     /neighbourhood="20000"
+                     /product="arylpolyene"
+                     /protocluster_number="1"
+     cand_cluster    1..1021
+                     /candidate_cluster_number="1"
+                     /contig_edge="True"
+                     /detection_rules="(APE_KS1 or APE_KS2)"
+                     /kind="single"
+                     /product="arylpolyene"
+                     /protoclusters="1"
+                     /tool="antismash"
+     region          1..1021
+                     /candidate_cluster_numbers="1"
+                     /contig_edge="True"
+                     /product="arylpolyene"
+                     /region_number="1"
+                     /rules="(APE_KS1 or APE_KS2)"
+                     /tool="antismash"
+     CDS             2..277
+                     /gene_functions="biosynthetic (rule-based-clusters)
+                     arylpolyene: APE_KS2"
+                     /gene_kind="biosynthetic"
+                     /locus_tag="ctg7850_1"
+                     /sec_met_domain="APE_KS2 (E-value: 8e-23, bitscore: 68.7,
+                     seeds: 16, tool: rule-based-clusters)"
+                     /transl_table=11
+                     /translation="RTAMSSTKALTGHTLGAAGVTDAGLLMLMLLAGRGLTLPAQFAPG
+                     DEPDTTLPLAGVIRTATTLPPGPVMSNNFAFGGNNTSLIFVGTEHD"
+     CDS             270..752
+                     /locus_tag="ctg7850_2"
+                     /transl_table=11
+                     /translation="MTEYQAPEAYLPHRAPMCLVSRVVCVGDEDVVCETDATSDGVLKA
+                     HWRDGELPEAFALEIMAQTVGVWARWHGELSPVPDGDAEADIGLLLSVRSVRIDGVVRE
+                     GGPTLRCIMHKLMLDGRLAAFEGELRADEETVASGRLTVFQPLESEVAALFGEKTR"
+     CDS             749..1021
+                     /NRPS_PKS="Domain: PKS_KR (5-90). E-value: 3.3e-10. Score:
+                     31.9. Matches aSDomain: nrpspksdomains_ctg7850_3_PKS_KR.1"
+                     /NRPS_PKS="type: other"
+                     /locus_tag="ctg7850_3"
+                     /transl_table=11
+                     /translation="VTDKKTVLITGASRGIGRACALELARKGFALVLNSRAPSEAMDET
+                     VRLVSETGAEVRTLFFDVGSAEAAREAIDGDIATHGAYWGVVLNAG"
+     CDS_motif       764..856
+                     /aSTool="nrps_pks_domains"
+                     /database="abmotifs"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksmotif_ctg7850_3_0001"
+                     /evalue="1.10E-07"
+                     /label="PKSI-KR_m1"
+                     /locus_tag="ctg7850_3"
+                     /protein_end="36"
+                     /protein_start="5"
+                     /score="24.5"
+                     /tool="antismash"
+                     /translation="TVLITGASRGIGRACALELARKGFALVLNSRA"
+     aSDomain        764..1018
+                     /aSDomain="PKS_KR"
+                     /aSTool="nrps_pks_domains"
+                     /database="nrpspksdomains.hmm"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksdomains_ctg7850_3_PKS_KR.1"
+                     /evalue="3.30E-10"
+                     /label="ctg7850_3_PKS_KR.1"
+                     /locus_tag="ctg7850_3"
+                     /protein_end="90"
+                     /protein_start="5"
+                     /score="31.9"
+                     /tool="antismash"
+                     /translation="TVLITGASRGIGRACALELARKGFALVLNSRAPSEAMDETVRLVS
+                     ETGAEVRTLFFDVGSAEAAREAIDGDIATHGAYWGVVLNAG"
+     aSModule        764..1018
+                     /domains="nrpspksdomains_ctg7850_3_PKS_KR.1"
+                     /incomplete
+                     /locus_tags="ctg7850_3"
+                     /tool="antismash"
+                     /type="unknown"
+ORIGIN
+        1 ccgcacggcc atgagctcta ccaaggcgct gacgggccac acgctcggcg cggccggcgt
+       61 gaccgatgcg gggctgctga tgctcatgtt gctggccggt cggggactga cgttgcccgc
+      121 tcagtttgcg cccggcgacg aacctgatac gacccttccg ttggcgggcg tcatccgtac
+      181 ggcgacgacg ctgccgcccg gtcccgtgat gagcaacaac tttgctttcg gcggcaacaa
+      241 tacgtcgctg atttttgtag gaaccgaaca tgactgagta tcaagcgccc gaagcctatc
+      301 tgccgcatcg cgcgccgatg tgtctggtct cccgcgtcgt ttgcgtgggg gatgaggacg
+      361 tggtgtgcga aaccgatgcg acgtcggacg gcgttttgaa ggcgcattgg cgtgacgggg
+      421 aactgcccga ggcctttgcg ctcgaaatca tggcgcagac cgtcggcgtc tgggcccgat
+      481 ggcacggcga actttcgccc gtgcccgacg gggatgcaga ggccgacatc ggattattgc
+      541 tctcggtgcg ttcggttcgc atcgacgggg tggtgcgcga gggcggtccg acgcttcgtt
+      601 gcatcatgca caagcttatg ctcgacggtc ggctcgccgc atttgaaggt gaactccgtg
+      661 cggatgagga aacggtggct tcgggccgcc tgacggtatt tcagccgctc gaatcggaag
+      721 tggcggcact ttttggtgag aagacaaggt gacggataag aaaacggtat tgattacggg
+      781 tgcctcccgc gggatcggtc gcgcctgtgc gctcgaactc gcccgcaagg gttttgccct
+      841 ggtgctcaac agtcgtgcgc cttcggaggc catggatgag acggttcgtc tcgtgagcga
+      901 gacgggcgca gaggtgcgca cgctcttttt cgatgtgggt tcggccgagg ccgcccgtga
+      961 ggcgatcgac ggcgatattg ccacgcacgg tgcgtattgg ggcgttgtgc tcaacgcggg
+     1021 c
+//

@@ -1,0 +1,232 @@
+LOCUS       c03723_JAAHHA0..        3378 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  JAAHHA010000701.1 Okeania sp. SIO2H7 2H7_NODE_701, whole genome
+            shotgun sequence.
+ACCESSION   JAAHHA010000701
+VERSION     JAAHHA010000701
+KEYWORDS    .
+SOURCE      
+  ORGANISM  
+            .
+COMMENT     ##antiSMASH-Data-START##
+            Version      :: 5.1.2
+            Run date     :: 2021-04-12 13:26:29
+            Original ID  :: JAAHHA010000701.1
+            NOTE: This is a single cluster extracted from a larger record!
+            Orig. start  :: 0
+            Orig. end    :: 3378
+            ##antiSMASH-Data-END##
+FEATURES             Location/Qualifiers
+     protocluster    1..3378
+                     /aStool="rule-based-clusters"
+                     /contig_edge="True"
+                     /core_location="[2:1610](+)"
+                     /cutoff="0"
+                     /detection_rule="cds((PP-binding or NAD_binding_4) and
+                     (AMP-binding or A-OX))"
+                     /neighbourhood="20000"
+                     /product="NRPS-like"
+                     /protocluster_number="1"
+                     /tool="antismash"
+     proto_core      3..1610
+                     /aStool="rule-based-clusters"
+                     /tool="antismash"
+                     /cutoff="0"
+                     /detection_rule="cds((PP-binding or NAD_binding_4) and
+                     (AMP-binding or A-OX))"
+                     /neighbourhood="20000"
+                     /product="NRPS-like"
+                     /protocluster_number="1"
+     cand_cluster    1..3378
+                     /candidate_cluster_number="1"
+                     /contig_edge="True"
+                     /detection_rules="cds((PP-binding or NAD_binding_4) and
+                     (AMP-binding or A-OX))"
+                     /kind="single"
+                     /product="NRPS-like"
+                     /protoclusters="1"
+                     /tool="antismash"
+     region          1..3378
+                     /candidate_cluster_numbers="1"
+                     /contig_edge="True"
+                     /product="NRPS-like"
+                     /region_number="1"
+                     /rules="cds((PP-binding or NAD_binding_4) and (AMP-binding
+                     or A-OX))"
+                     /tool="antismash"
+     CDS             3..1610
+                     /NRPS_PKS="Domain: PCP (190-258). E-value: 1e-24. Score:
+                     78.3. Matches aSDomain: nrpspksdomains_ctg3723_1_PCP.1"
+                     /NRPS_PKS="Domain: Thioesterase (277-523). E-value:
+                     3.1e-38. Score: 124.2. Matches aSDomain:
+                     nrpspksdomains_ctg3723_1_Thioesterase.1"
+                     /NRPS_PKS="type: other"
+                     /gene_functions="biosynthetic (rule-based-clusters)
+                     NRPS-like: PP-binding"
+                     /gene_functions="biosynthetic (rule-based-clusters)
+                     NRPS-like: AMP-binding"
+                     /gene_kind="biosynthetic"
+                     /locus_tag="ctg3723_1"
+                     /sec_met_domain="AMP-binding (E-value: 3.3e-30, bitscore:
+                     92.0, seeds: 400, tool: rule-based-clusters)"
+                     /sec_met_domain="PP-binding (E-value: 5.2e-18, bitscore:
+                     52.6, seeds: 164, tool: rule-based-clusters)"
+                     /transl_table=11
+                     /translation="KQQQQTRHTNNKQQLTQNNNNKRDTPSNNRPELTAEKFISNPFSD
+                     RGKSRLYKTGDLARYLPDGNIEFIGRIDNQVKIRGFRIEIGEIETTISQHPTVKETVVL
+                     AREDNPGNKRLVAYIVPETEANQEIVPQLKQYLKQKLAEYMVPSAFVVLSQLPLTPNGK
+                     VNRRALPVPDISSFSESNNIVAPRDDIEGKLAEIWSNILNINPVGIKNNFFELGGHSVL
+                     AVNLMAKIQQKFAKQLPLSTLFTNPTIEDLASLIRGENQVISSSLVPLQTQGNKQPFFC
+                     VHPAGGHVFYYQELSRYLGNNQPFYGLQAQGFNEGEKIFTNVEDMAEFYIKTIQEFQPE
+                     GPYQIGGWSFGGVVAFEMAQQLLQQGKKVSLLALLDPWAPILLDHNKKIDNLYMRGVLS
+                     RYFGGMFGITNLVSEDELIGLSSEEQIEFIIDKAEKLELFPQEATREQNRRFIDVIIGT
+                     LKATYSYKRRPYSGKVTVFRAEEKHPHGIDPQLVWVEMYAILDVVDMEVVMVPGNHFTF
+                     IKEPNNKVLAERLSEHLK"
+     CDS_motif       204..269
+                     /aSTool="nrps_pks_domains"
+                     /database="abmotifs"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksmotif_ctg3723_1_0001"
+                     /evalue="1.00E-11"
+                     /label="NRPS-A_a8"
+                     /locus_tag="ctg3723_1"
+                     /protein_end="89"
+                     /protein_start="67"
+                     /score="36.8"
+                     /tool="antismash"
+                     /translation="FIGRIDNQVKIRGFRIEIGEIET"
+     aSDomain        573..776
+                     /aSDomain="PCP"
+                     /aSTool="nrps_pks_domains"
+                     /database="nrpspksdomains.hmm"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksdomains_ctg3723_1_PCP.1"
+                     /evalue="1.00E-24"
+                     /label="ctg3723_1_PCP.1"
+                     /locus_tag="ctg3723_1"
+                     /protein_end="258"
+                     /protein_start="190"
+                     /score="78.3"
+                     /tool="antismash"
+                     /translation="EGKLAEIWSNILNINPVGIKNNFFELGGHSVLAVNLMAKIQQKFA
+                     KQLPLSTLFTNPTIEDLASLIRGE"
+     aSModule        573..1571
+                     /domains="nrpspksdomains_ctg3723_1_PCP.1"
+                     /domains="nrpspksdomains_ctg3723_1_Thioesterase.1"
+                     /final_module
+                     /incomplete
+                     /locus_tags="ctg3723_1"
+                     /tool="antismash"
+                     /type="unknown"
+     CDS_motif       834..863
+                     /aSTool="nrps_pks_domains"
+                     /database="abmotifs"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksmotif_ctg3723_1_0002"
+                     /evalue="1.90E-03"
+                     /label="NRPS-beforete1"
+                     /locus_tag="ctg3723_1"
+                     /protein_end="287"
+                     /protein_start="277"
+                     /score="11.2"
+                     /tool="antismash"
+                     /translation="PFFCVHPAGGH"
+     aSDomain        834..1571
+                     /aSDomain="Thioesterase"
+                     /aSTool="nrps_pks_domains"
+                     /database="nrpspksdomains.hmm"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksdomains_ctg3723_1_Thioesterase.1"
+                     /evalue="3.10E-38"
+                     /label="ctg3723_1_Thioesterase.1"
+                     /locus_tag="ctg3723_1"
+                     /protein_end="523"
+                     /protein_start="277"
+                     /score="124.2"
+                     /tool="antismash"
+                     /translation="PFFCVHPAGGHVFYYQELSRYLGNNQPFYGLQAQGFNEGEKIFTN
+                     VEDMAEFYIKTIQEFQPEGPYQIGGWSFGGVVAFEMAQQLLQQGKKVSLLALLDPWAPI
+                     LLDHNKKIDNLYMRGVLSRYFGGMFGITNLVSEDELIGLSSEEQIEFIIDKAEKLELFP
+                     QEATREQNRRFIDVIIGTLKATYSYKRRPYSGKVTVFRAEEKHPHGIDPQLVWVEMYAI
+                     LDVVDMEVVMVPGNHFTFIKEPNNK"
+     CDS_motif       1014..1088
+                     /aSTool="nrps_pks_domains"
+                     /database="abmotifs"
+                     /detection="hmmscan"
+                     /domain_id="nrpspksmotif_ctg3723_1_0003"
+                     /evalue="1.70E-16"
+                     /label="NRPS-te1"
+                     /locus_tag="ctg3723_1"
+                     /protein_end="362"
+                     /protein_start="337"
+                     /score="52.4"
+                     /tool="antismash"
+                     /translation="QPEGPYQIGGWSFGGVVAFEMAQQLL"
+     CDS             2057..3094
+                     /locus_tag="ctg3723_2"
+                     /transl_table=11
+                     /translation="MLGSASESKKKIYRIIYGYWQSQCVYVATNLGIPELLHNGQQTVE
+                     AIAEKTGTKVEKLYVVLRALAHLGVFLEKPGRVFASTELSELLITNGSPSIGDFLMHIT
+                     EPNMWDGWRELENSLKTGEVPFELAKGKDFYTSYMTENPKSKNLFNNAMSYLTTEVVDP
+                     LFAVYDFGRFQTVMDVGGNQGTLIANIVKRFGCKGILFDLPHEVETAPNNLAKHGVNDA
+                     VTVIGGSALESLPKGADAIVMKYFLSVFSREDSIKVLTNCREALSKDGRVILLQTLVPS
+                     VGAPVEYPDGTIPALAAVQMMITNPGGYWRTEQEYKDLFAASGFQLEQIVHTGTSVTVM
+                     EFSPL"
+ORIGIN
+        1 caaaacaaca acaacaaacg cgacacacca acaacaaaca acaattaacg caaaacaaca
+       61 acaacaaacg cgacacacca tcaaataatc gtccggagct gactgcggaa aaatttatct
+      121 ccaatccgtt tagcgatcga ggaaaaagca gactatacaa aacaggagat ttagctcgct
+      181 atcttcctga tggtaatatc gaatttattg gtcgcatcga taaccaagtc aaaattcgag
+      241 gttttcggat cgaaattgga gaaattgaaa cgactatcag tcaacatccc actgttaaag
+      301 aaacagtagt tttggcaagg gaagataacc ctggtaataa acgtttagtg gcgtatattg
+      361 tgcccgaaac tgaggcgaat caagaaattg taccgcaact caaacaatat ctaaaacaaa
+      421 agttggcaga gtatatggtg ccttcagctt ttgtggtttt gtcacaacta ccgttaactc
+      481 cgaatgggaa agttaaccgt cgtgctttac ctgtaccaga tatttctagt tttagtgaga
+      541 gtaataatat tgttgcacca cgagatgata ttgaagggaa gttagcagaa atttggtcaa
+      601 atattctcaa tattaatccg gtgggaatta aaaataattt ctttgagtta ggaggtcatt
+      661 ctgttttagc agttaactta atggcaaaaa ttcagcaaaa gtttgccaaa caattacctt
+      721 tatctactct gtttactaat cccacaattg aagatttagc aagtttaatc cgaggagaaa
+      781 atcaagttat ttcttcttct ctagttcctt tgcaaactca gggaaataag caaccatttt
+      841 tctgcgtaca tccggcggga ggtcatgtat tttattacca agaattgtcc cgttatttag
+      901 gtaataatca acctttttat ggcttacaag cacaggggtt taatgaagga gaaaaaatct
+      961 tcacaaatgt ggaagatatg gctgagttct atatcaaaac tattcaagaa tttcaaccag
+     1021 aagggcctta tcaaattggt ggttggtctt ttggtggagt tgttgctttt gaaatggcac
+     1081 agcagttact tcaacaaggg aaaaaagtta gtttattggc tttgttagat ccttgggctc
+     1141 ctattctatt agaccacaat aaaaagattg ataatttgta catgaggggt gtattaagtc
+     1201 gttattttgg aggaatgttt ggtataacta atttagttag tgaggatgaa ttaattgggc
+     1261 taagttcaga ggagcaaata gagtttatta ttgataaagc ggaaaaatta gagttatttc
+     1321 cccaggaagc gactcgcgaa caaaatcggc ggtttattga tgtaattatt ggcactttga
+     1381 aggcaactta tagttataaa cgtcggcctt attccggaaa agtaacagtc tttcgtgcgg
+     1441 aagaaaagca tcctcatgga atagatccgc aattagtttg ggtagaaatg tatgctattt
+     1501 tagatgtagt tgatatggag gtagttatgg ttcctggcaa tcattttaca tttatcaagg
+     1561 aaccaaacaa taaagtatta gcagaacgtt tgagtgagca tttaaagtag gtaagtattc
+     1621 agcagttagc taccagctat cagttatagc aattcgcaat tatttggagg cttgctcaaa
+     1681 tccccgttat accaaattga taaatgtttg ctacaaatag ctaggatatt tcttaggagt
+     1741 caggagtcgt ataggaatgg ctttaatacc atttttttag ggcataaatt atcttttttg
+     1801 tcaaagggac atctctttta aaatctttta atcacgctga ttattcgtaa cattcttttt
+     1861 tcaaattggt attacaaaaa taacttatga cttcccctcc tgggaggggt taggggtggg
+     1921 ttgacttctg acttctgact tcgttaaccc tgttccgtct tttggaggag atgtctaatg
+     1981 gaacaaataa gtttaagtac ctttttgaga gtatttgctt ttatcatata gttagtaaaa
+     2041 aaattggagc ttaattatgt taggatctgc ctcagaatct aagaagaaaa tctatcgaat
+     2101 tatttacggt tactggcaaa gtcagtgtgt ttatgtagca acaaatttag gtataccaga
+     2161 attgctgcat aacggacaac aaaccgttga agcaatagca gaaaaaacag gcacaaaagt
+     2221 agaaaaactt tatgttgtgc tgcgtgcttt agctcattta ggtgtctttt tagaaaaacc
+     2281 tggacgggta tttgcttcta cagaattatc ggaacttctg attactaatg gttccccttc
+     2341 tatcggtgat tttttaatgc acattacaga gcctaatatg tgggatggtt ggcgagaatt
+     2401 agaaaacagt ttaaagactg gagaagttcc ttttgaatta gcaaaaggta aggattttta
+     2461 tacttcctat atgacagaaa atcccaaaag taaaaacctg ttcaacaatg ccatgagtta
+     2521 tttaactact gaagttgttg acccgttatt tgcagtttat gattttggtc gttttcagac
+     2581 agtaatggat gtgggaggaa atcaaggtac attaattgcc aatattgtga aaagattcgg
+     2641 ctgtaaaggt attttgtttg acttacccca tgaagtagaa actgctccta ataatctggc
+     2701 aaaacatgga gttaatgatg cagtaacagt tattggtggg agtgctttgg aatctttacc
+     2761 aaaaggtgcc gatgcaattg taatgaaata ttttctatcg gtatttagtc gcgaagattc
+     2821 tatcaaggta ctgactaact gtcgagaagc tctctcaaaa gatggtcggg ttatactttt
+     2881 acaaacttta gttccttctg tgggagcgcc tgtagaatat cccgatggca caataccagc
+     2941 tttagctgca gtgcaaatga tgattactaa tcctggaggt tattggcgta ccgaacaaga
+     3001 atacaaagat ttgtttgcag caagtggttt ccaactcgaa caaatcgttc atactggcac
+     3061 aagtgtgaca gttatggagt tcagtcctct ttaaataatc ggcgcatcac attactgtaa
+     3121 tgtgatgcgc tgtttcccac attgattttc atatagaacc cctaaccgta tcttcatata
+     3181 aatatcaagt ttttttgact aggagacagc tatactggag acaggagaca gaaggtaaga
+     3241 gagaaaaggt taagagggaa gatttgggga gagataatac aaaaaattca acactccttc
+     3301 aactgaattt tcctcaaaat taatgcgcga aaagacttga ctaccataat tatatagatc
+     3361 tcaaatgggt tctatata
+//
