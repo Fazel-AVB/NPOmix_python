@@ -171,32 +171,80 @@ def get_ispec_mat(speclist,LCMS_folder,fmgf):
     return ispec_mat
 
 def get_merged_ispec_mat(ispec_mat):
+    """
+    Merges a spectra-sample matrix by consolidating samples from the same strain.
+    Args:
+        ispec_mat (pd.DataFrame): Input matrix with spectra as rows and samples as columns.
+    Returns:
+        pd.DataFrame: Merged matrix with spectra as rows and strains as columns.
+    """
+    # Transpose the input matrix (spectra x samples -> samples x spectra)
     ispec_mat_trans = ispec_mat.T
     processed_list = []
     merged_ispec_mat = pd.DataFrame()
-    for i,r in ispec_mat_trans.iterrows():
+    # Iterate over each sample (row) in the transposed matrix
+    for i, r in ispec_mat_trans.iterrows():
+        # Extract strain name by splitting sample ID at the first '.'
         strain = i.split('.')[0]
+        # Process each strain only once
         if strain not in processed_list:
             processed_list.append(strain)
+            # Filter rows for the current strain
             ispec_temp = ispec_mat_trans[ispec_mat_trans.index.map(lambda x: strain in x)]
+            # If only one sample for the strain, use its values directly
             if len(ispec_temp) == 1:
                 merged_ispec_mat[strain] = ispec_temp.loc[ispec_temp.index[0], :].values.tolist()
+            # If multiple samples, take the maximum value for each spectrum
             else:
                 merged_ispec_mat[strain] = list(ispec_temp.max(axis=0))
+    # Set the index of the merged matrix to match the original spectra
     merged_ispec_mat.index = list(ispec_mat.index)
     return merged_ispec_mat
 
-def renaming_merged_ispec_mat(ena_df_file,merged_ispec_mat):
-    ena_df = pd.read_csv(ena_df_file,sep=',',names=['ERR_code','ERXS_code'])
-    ena_dict = dict(zip(ena_df['ERXS_code'],ena_df['ERR_code']))
-    new_cols_ispec = []
+def renaming_merged_ispec_mat(ena_df_file, merged_ispec_mat):
+    """
+    Rename the columns of the merged ion spectrum matrix using ENA sample ID mappings.
+
+    This function uses a lookup table (CSV) containing mappings between ERX/ERS identifiers 
+    (experimental/run/sample codes) and ERR identifiers (read IDs). It replaces any column name
+    in the matrix that matches an ERX/ERS code with its corresponding ERR code.
+
+    Parameters
+    ----------
+    ena_df_file : str
+        Path to the CSV file containing ERX/ERS to ERR mappings.
+    merged_ispec_mat : pd.DataFrame
+        DataFrame where columns represent samples/strains to be renamed.
+
+    Returns
+    -------
+    pd.DataFrame
+        The same DataFrame but with updated column names based on the provided mapping.
+    """
+    
+    # Read the ENA mapping file, assuming no header and two columns
+    # Column 1: ERR_code (target name), Column 2: ERX/ERS code (current name)
+    ena_df = pd.read_csv(ena_df_file, sep=',', names=['ERR_code', 'ERXS_code'])
+    
+    # Create a dictionary mapping from ERX/ERS → ERR
+    ena_dict = dict(zip(ena_df['ERXS_code'], ena_df['ERR_code']))
+    
+    new_cols_ispec = []  # Will hold the updated column names
+
+    # Loop through each column in the merged matrix
     for item in merged_ispec_mat.columns:
+        # If the column name is an ERX or ERS ID, replace with corresponding ERR ID
         if 'ERS' in item or 'ERX' in item:
             new_cols_ispec.append(ena_dict[item])
         else:
+            # If not a known ENA code, leave it unchanged
             new_cols_ispec.append(item)
+    
+    # Assign the new column names to the DataFrame
     merged_ispec_mat.columns = new_cols_ispec
+
     return merged_ispec_mat
+
 
 ### obtaining bigscape dataframe and bigscape dictionary
 
@@ -253,10 +301,29 @@ def main_get_families(input_file):
     gcf_dict = get_family_dict(C,bigscape_df,gcf_dict,'Clustername_1','Clustername_2','Raw_distance')
     return bigscape_df,gcf_dict
 
-def parse_bigscape_df(ena_df_file,input_bigscape_net):
-    bigscape_df,bigscape_dict = main_get_families(input_bigscape_net)
-    bigscape_df["Raw_distance"] = 1-bigscape_df["Raw_distance"]
-    return bigscape_df,bigscape_dict
+def parse_bigscape_df(ena_df_file, input_bigscape_net):
+    """
+    Parses BiG-SCAPE data to generate a DataFrame and dictionary of gene cluster families.
+
+    This function processes a BiG-SCAPE input file to compute gene cluster families (GCFs)
+    using the main_get_families function. It also transforms the Raw_distance column by
+    inverting its values (1 - Raw_distance) to represent similarity scores.
+
+    Args:
+        ena_df_file (str): Path to the ENA correspondence file (used indirectly via main_get_families).
+        input_bigscape_net (str): Path to the BiG-SCAPE network file containing cluster relationships.
+
+    Returns:
+        tuple: A pair containing the processed DataFrame (bigscape_df) and a dictionary (bigscape_dict)
+               where keys are GCF identifiers and values are lists of cluster names.
+    """
+    # Call the main function to generate the initial DataFrame and family dictionary
+    bigscape_df, bigscape_dict = main_get_families(input_bigscape_net)
+    # Invert the Raw_distance values to convert distances into similarity scores
+    bigscape_df["Raw_distance"] = 1 - bigscape_df["Raw_distance"]
+    # Return the updated DataFrame and dictionary
+    return bigscape_df, bigscape_dict
+
 
 def save_bigscape_dict(bigscape_dict,results_folder):
     w = csv.writer(open("%sbigscape_dict-NPOmix1.0-%s.txt"%(results_folder,current_date), "w"))
@@ -266,24 +333,47 @@ def save_bigscape_dict(bigscape_dict,results_folder):
 ### renaming bigscape dataframe and bigscape dictionary
 
 def parse_gbk_list(folder_list):
-    gbk_list,new_name_list = [],[]
+    """
+    Parses GenBank (GBK) files from antiSMASH folders to generate lists of file names and new identifiers.
+
+    This function recursively traverses specified antiSMASH folders, identifies GBK files,
+    and generates two lists: one with original file names and another with standardized names.
+
+    Args:
+        folder_list (list): List of paths to antiSMASH output folders containing GBK files.
+    Returns:
+        tuple: A pair containing gbk_list (list of original GBK file names without extension)
+               and new_name_list (list of standardized names for the GBK files).
+    """
+    # Initialize empty lists to store original and new file names
+    gbk_list, new_name_list = [], []
+    # Iterate over each antiSMASH folder in the input list
     for antismash_folder in folder_list:
+        # Recursively walk through the directory tree
         for root, dirs, files in os.walk(antismash_folder):
-            count = 1
+            count = 1  # Counter for region numbering
+            # Sort files to ensure consistent ordering
             for file in sorted(files):
+                # Check if the file is a GenBank file
                 if file.endswith(".gbk"):
+                    # Filter for files containing 'region' and exclude hidden files (e.g., '._')
                     if 'region' in file and '._' not in file:
                         if 'BGC' in file:
+                            # For BGC-containing files, use the base name without extension
                             new_name = file.rstrip('.gbk')
                             new_name_list.append(new_name)
                             gbk_list.append(file.rstrip('.gbk'))
                         else:
+                            # Extract strain name from the directory name
                             strain_name = os.path.basename(os.path.normpath(root)).split('.')[0]
+                            # Append original file name without extension
                             gbk_list.append(file.rstrip('.gbk'))
+                            # Generate a new name with strain and region number (e.g., strain.region001)
                             new_name = strain_name + '.region' + "{0:0=3d}".format(count)
                             count += 1
                             new_name_list.append(new_name)
-    return gbk_list,new_name_list
+    # Return the lists of original and renamed file identifiers
+    return gbk_list, new_name_list
 
 # def get_bigscape_dict2(name_dict,bigscape_dict):
 #     bigscape_dict2 = defaultdict(list)
@@ -300,60 +390,153 @@ def parse_gbk_list(folder_list):
 #     return bigscape_dict2
 
 # change: I have added the block below as a replacement for the function above 
+from collections import defaultdict
+
 def get_bigscape_dict2(name_dict, bigscape_dict):
+    """
+    Rename the BGC entries in a BiG-SCAPE dictionary using a name mapping.
+
+    Parameters
+    ----------
+    name_dict : dict
+        A dictionary mapping original BGC names to renamed, standardized names.
+    bigscape_dict : dict
+        A dictionary mapping GCF IDs (e.g. 'GCF1') to a list of BGC names.
+
+    Returns
+    -------
+    bigscape_dict2 : defaultdict(list)
+        A new dictionary with the same GCF keys, but renamed BGC entries.
+    """
     bigscape_dict2 = defaultdict(list)
+
+    # Iterate through each GCF and its list of BGCs
     for key, values in bigscape_dict.items():
         for value in values:
+
+            # Case 1: value is missing from name_dict — log a warning and skip
             if value not in name_dict:
                 print(f"[WARNING] BGC not found in name_dict: {value}")
-                continue  # skip unmapped BGCs
-            
+                continue  # Skip this BGC
+
+            # Case 2: MIBiG-style BGC (e.g., BGC0001234) — keep original name
             if 'BGC' in value:
-                # handle BGC case here if needed
-                # bigscape_dict2[key].append(name_dict[value])
-                bigscape_dict2[key].append(value) # keep original BGC name
-                continue  # move to next value
-            
+                bigscape_dict2[key].append(value)
+                continue  # Move on to next BGC
+
+            # Case 3: ENA-derived name contains ERR code (e.g., ERR123456_sample.region001)
             if 'ERR' in name_dict[value]:
-                new_ERR_name = name_dict[value].split('_')[0] + '.' + name_dict[value].split('.')[1]
+                # Construct a new name like: ERR123456.region001
+                parts = name_dict[value].split('_')[0].split('.')
+                new_ERR_name = parts[0] + '.' + name_dict[value].split('.')[1]
                 bigscape_dict2[key].append(new_ERR_name)
+
+            # Case 4: Generic renaming using name_dict
             else:
                 bigscape_dict2[key].append(name_dict[value])
+
     return bigscape_dict2
 
 
-def rename_bigscape_df(antismash_folder,bigscape_df,bigscape_dict):
-    gbk_list,new_name_list = parse_gbk_list([antismash_folder])
-    name_dict = dict(zip(gbk_list,new_name_list))
-    bigscape_dict2 = get_bigscape_dict2(name_dict,bigscape_dict)
-    new_col1, new_col2 = [],[]
-    for i,r in bigscape_df.iterrows():
+# def rename_bigscape_df(antismash_folder,bigscape_df,bigscape_dict):
+#     gbk_list,new_name_list = parse_gbk_list([antismash_folder])
+#     name_dict = dict(zip(gbk_list,new_name_list))
+#     bigscape_dict2 = get_bigscape_dict2(name_dict,bigscape_dict)
+#     new_col1, new_col2 = [],[]
+#     for i,r in bigscape_df.iterrows():
+#         if 'BGC' in bigscape_df['Clustername_1'].loc[i]:
+#             new_col1.append(bigscape_df['Clustername_1'].loc[i])
+#         else:
+#             # change: I have commented the line below
+#             # new_col1.append(name_dict[bigscape_df['Clustername_1'].loc[i]])
+#             val = bigscape_df['Clustername_1'].loc[i]
+#             if val in name_dict:
+#                 new_col1.append(name_dict[val])
+#             else:          
+#                 print(f"[WARNING] Clustername_1 not found in name_dict: {val}")
+#                 new_col1.append(val)  # Or optionally skip, or append None
+            
+#         if 'BGC' in bigscape_df['Clustername_2'].loc[i]:
+#             new_col2.append(bigscape_df['Clustername_2'].loc[i])
+#         else:
+#             # change: I have commented the line below
+#             # new_col2.append(name_dict[bigscape_df['Clustername_2'].loc[i]])
+#             val = bigscape_df['Clustername_2'].loc[i]
+#             if val in name_dict:
+#                 new_col2.append(name_dict[val])
+#             else:
+#                 print(f"[WARNING] Clustername_2 not found in name_dict: {val}")
+#                 new_col2.append(val)
+#     bigscape_df['Clustername_1'] = new_col1
+#     bigscape_df['Clustername_2'] = new_col2
+#     return bigscape_df,bigscape_dict2
+
+def rename_bigscape_df(antismash_folder, bigscape_df, bigscape_dict):
+    """
+    Renames cluster names in the BiG-SCAPE dataframe and dictionary using names derived from antiSMASH file paths.
+
+    Parameters
+    ----------
+    antismash_folder : str
+        Path to the folder containing antiSMASH output `.gbk` files.
+
+    bigscape_df : DataFrame
+        A DataFrame from BiG-SCAPE containing pairwise comparisons between BGCs.
+
+    bigscape_dict : dict
+        A dictionary mapping GCF IDs to lists of BGC names.
+
+    Returns
+    -------
+    bigscape_df : DataFrame
+        Updated DataFrame with standardized BGC names.
+
+    bigscape_dict2 : dict
+        Renamed version of the original BiG-SCAPE GCF-to-BGC dictionary.
+    """
+
+    # Step 1: Parse all .gbk files to extract old and new BGC names
+    gbk_list, new_name_list = parse_gbk_list([antismash_folder])
+
+    # Create a mapping from old name (e.g., VILF01000001.1.region001) to new name (e.g., VILF01.region001)
+    name_dict = dict(zip(gbk_list, new_name_list))
+
+    # Step 2: Use name_dict to rename the bigscape_dict
+    bigscape_dict2 = get_bigscape_dict2(name_dict, bigscape_dict)
+
+    # Step 3: Rename Clustername_1 and Clustername_2 in the bigscape_df
+    new_col1, new_col2 = [], []
+
+    for i, r in bigscape_df.iterrows():
+        # ---- Clustername_1 ----
         if 'BGC' in bigscape_df['Clustername_1'].loc[i]:
+            # Keep curated MIBiG name unchanged
             new_col1.append(bigscape_df['Clustername_1'].loc[i])
         else:
-            # change: I have commented the line belone 
-            # new_col1.append(name_dict[bigscape_df['Clustername_1'].loc[i]])
             val = bigscape_df['Clustername_1'].loc[i]
             if val in name_dict:
                 new_col1.append(name_dict[val])
-            else:          
+            else:
                 print(f"[WARNING] Clustername_1 not found in name_dict: {val}")
-                new_col1.append(val)  # Or optionally skip, or append None
-            
+                new_col1.append(val)  # Keep original if not found
+
+        # ---- Clustername_2 ----
         if 'BGC' in bigscape_df['Clustername_2'].loc[i]:
             new_col2.append(bigscape_df['Clustername_2'].loc[i])
         else:
-            # change: I have commented the line belone
-            # new_col2.append(name_dict[bigscape_df['Clustername_2'].loc[i]])
             val = bigscape_df['Clustername_2'].loc[i]
             if val in name_dict:
                 new_col2.append(name_dict[val])
             else:
                 print(f"[WARNING] Clustername_2 not found in name_dict: {val}")
                 new_col2.append(val)
+
+    # Step 4: Update the DataFrame with new column values
     bigscape_df['Clustername_1'] = new_col1
     bigscape_df['Clustername_2'] = new_col2
-    return bigscape_df,bigscape_dict2
+
+    return bigscape_df, bigscape_dict2
+
 
 def save_bigscape_dict2(bigscape_dict2,results_folder):
     w = csv.writer(open("%sbigscape_dict2-NPOmix1.0-%s.txt"%(results_folder,current_date), "w"))
@@ -362,44 +545,103 @@ def save_bigscape_dict2(bigscape_dict2,results_folder):
         
 ### obtaining the affinity dataframe (BGC fingerprints)
 
-def get_pre_training_df(bigscape_df,bigscape_dict,strain_list,bigscape_bgcs):
-    training_df = pd.DataFrame(columns=strain_list, index=range(0,len(bigscape_bgcs)))
-    index_row = 0
-    row_names = []
+# def get_pre_training_df(bigscape_df,bigscape_dict,strain_list,bigscape_bgcs):
+#     training_df = pd.DataFrame(columns=strain_list, index=range(0,len(bigscape_bgcs)))
+#     index_row = 0
+#     row_names = []
+#     for gcf in bigscape_dict:
+#         for cluster in bigscape_dict[gcf]:
+#             row_names.append(cluster)
+#             temp_dict = {}
+#             self = cluster.split(".")[0]
+#             temp_dict[self] = [1]
+#             temp_df = bigscape_df[bigscape_df.Clustername_1.str.contains(cluster) | 
+#                                   bigscape_df.Clustername_2.str.contains(cluster)]
+#             for i,r in temp_df.iterrows():
+#                 if temp_df.Clustername_1.loc[i] == cluster:
+#                     target = temp_df.Clustername_2.loc[i]
+#                     target = str(target).split(".")[0]
+#                     if target not in temp_dict:
+#                         temp_dict[target] = [temp_df.Raw_distance.loc[i]]
+#                     else:
+#                         temp_dict[target] = temp_dict[target]+[temp_df.Raw_distance.loc[i]]
+#                 else:
+#                     target = temp_df.Clustername_1.loc[i]
+#                     target = str(target).split(".")[0]
+#                     if target not in temp_dict.keys():
+#                         temp_dict[target] = [temp_df.Raw_distance.loc[i]]
+#                     else:
+#                         temp_dict[target] = temp_dict[target]+[temp_df.Raw_distance.loc[i]]
+#             for key in temp_dict:
+#                 if len(temp_dict[key]) > 1:
+#                     new_value = max(temp_dict[key])
+#                     temp_dict[key] = new_value
+#                 else:
+#                     temp_dict[key] = temp_dict[key][0]
+#             temp_dict["label"] = gcf
+#             training_df.loc[index_row] = pd.Series(temp_dict)
+#             index_row += 1
+#     training_df.fillna(0,inplace=True)
+#     return training_df,row_names
+
+def get_pre_training_df(bigscape_df, bigscape_dict, strain_list, bigscape_bgcs):
+    # Initialize an empty DataFrame with strain names as columns and number of BGCs as rows
+    training_df = pd.DataFrame(columns=strain_list, index=range(0, len(bigscape_bgcs)))
+
+    index_row = 0                # Tracks the current row in the training matrix
+    row_names = []              # Stores the list of BGC region names added
+
+    # Loop through each GCF (Gene Cluster Family) in the BiG-SCAPE dictionary
     for gcf in bigscape_dict:
-        for cluster in bigscape_dict[gcf]:
-            row_names.append(cluster)
-            temp_dict = {}
-            self = cluster.split(".")[0]
-            temp_dict[self] = [1]
-            temp_df = bigscape_df[bigscape_df.Clustername_1.str.contains(cluster) | 
-                                  bigscape_df.Clustername_2.str.contains(cluster)]
-            for i,r in temp_df.iterrows():
+        for cluster in bigscape_dict[gcf]:  # Each cluster (region) in the current GCF
+            row_names.append(cluster)       # Record the cluster name
+
+            temp_dict = {}                  # Temporary dict to hold fingerprint values
+            self = cluster.split(".")[0]    # Extract strain name (e.g., from X.region001 → X)
+            temp_dict[self] = [1]           # Self-distance is 1 (i.e., perfect match with self)
+
+            # Extract all edges from bigscape_df involving the current cluster
+            temp_df = bigscape_df[
+                bigscape_df.Clustername_1.str.contains(cluster) | 
+                bigscape_df.Clustername_2.str.contains(cluster)
+            ]
+
+            # Loop through each edge involving the current cluster
+            for i, r in temp_df.iterrows():
                 if temp_df.Clustername_1.loc[i] == cluster:
                     target = temp_df.Clustername_2.loc[i]
-                    target = str(target).split(".")[0]
-                    if target not in temp_dict:
-                        temp_dict[target] = [temp_df.Raw_distance.loc[i]]
-                    else:
-                        temp_dict[target] = temp_dict[target]+[temp_df.Raw_distance.loc[i]]
                 else:
                     target = temp_df.Clustername_1.loc[i]
-                    target = str(target).split(".")[0]
-                    if target not in temp_dict.keys():
-                        temp_dict[target] = [temp_df.Raw_distance.loc[i]]
-                    else:
-                        temp_dict[target] = temp_dict[target]+[temp_df.Raw_distance.loc[i]]
+
+                # Extract just the strain name (e.g., X.region002 → X)
+                target = str(target).split(".")[0]
+
+                # Add Raw_distance to the target's entry in temp_dict
+                if target not in temp_dict:
+                    temp_dict[target] = [temp_df.Raw_distance.loc[i]]
+                else:
+                    temp_dict[target].append(temp_df.Raw_distance.loc[i])
+
+            # Aggregate multiple distances per strain using max (strongest association)
             for key in temp_dict:
                 if len(temp_dict[key]) > 1:
-                    new_value = max(temp_dict[key])
-                    temp_dict[key] = new_value
+                    temp_dict[key] = max(temp_dict[key])
                 else:
                     temp_dict[key] = temp_dict[key][0]
+
+            # Add GCF label for training
             temp_dict["label"] = gcf
+
+            # Add the row to the training matrix
             training_df.loc[index_row] = pd.Series(temp_dict)
             index_row += 1
-    training_df.fillna(0,inplace=True)
-    return training_df,row_names
+
+    # Fill missing values (i.e., no relationship to that strain) with 0
+    training_df.fillna(0, inplace=True)
+
+    # Return the training matrix and the list of region names
+    return training_df, row_names
+
 
 def get_strain_list(bigscape_df):
     bgcs_list = list(np.unique([bigscape_df['Clustername_1']]+[bigscape_df['Clustername_2']]))
@@ -430,25 +672,49 @@ def get_networked_cols(merged_ispec_mat,affinity_df):
             networked_cols.append(item)
     return networked_cols
 
-def get_training_df(affinity_df,networked_cols,results_folder,affinity_bgcs):
+def get_training_df(affinity_df, networked_cols, results_folder, affinity_bgcs):
+    # Select only the columns (strains) that are present in both mass spec and BGC networks
     training_df = affinity_df[networked_cols]
+
+    # Extract the 'label' column (GCF labels for each BGC fingerprint row)
     label_col = affinity_df['label']
+
+    # Remove rows (BGCs) that are entirely zero across all selected strains
+    # (i.e., they are not connected to any MS spectrum strain)
     training_df = training_df[(training_df.T != 0).any()]
+
+    # Filter the label column to match the remaining (non-zero) rows in training_df
     filt_label_col = []
-    for n,item in enumerate(label_col):
+    for n, item in enumerate(label_col):
         if n in training_df.index:
             filt_label_col.append(item)
+
+    # Add the filtered GCF label column to the training dataframe
     training_df['label'] = filt_label_col
+
+    # Sort the columns (strain names) alphabetically for consistent structure
     training_df = training_df.sort_index(axis=1)
+
+    # Filter the list of BGC region names (affinity_bgcs) to match the filtered DataFrame
     training_bgcs = []
     count = 0
     for item in affinity_bgcs:
         if count in training_df.index:
             training_bgcs.append(item)
         count += 1
+
+    # Reset the DataFrame index to consecutive integers
     training_df = training_df.reset_index(drop=True)
-    training_df.to_csv("%straining_df-NPOmix1.0-%s.txt"%(results_folder,current_date),sep="\t",index_label=False)
-    return training_df,training_bgcs
+
+    # Save the final training DataFrame to a tab-separated file
+    training_df.to_csv(
+        "%straining_df-NPOmix1.0-%s.txt" % (results_folder, current_date),
+        sep="\t", index_label=False
+    )
+
+    # Return the processed training matrix and the list of matching BGC region names
+    return training_df, training_bgcs
+
 
 ### obtaining testing dataframe
 
