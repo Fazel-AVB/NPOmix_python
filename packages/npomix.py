@@ -173,6 +173,7 @@ def get_ispec_mat(speclist,LCMS_folder,fmgf):
 def get_merged_ispec_mat(ispec_mat):
     """
     Merges a spectra-sample matrix by consolidating samples from the same strain.
+    If multiple samples exist for a strain, the maximum value for each spectrum is taken.
     Args:
         ispec_mat (pd.DataFrame): Input matrix with spectra as rows and samples as columns.
     Returns:
@@ -189,7 +190,7 @@ def get_merged_ispec_mat(ispec_mat):
         # Process each strain only once
         if strain not in processed_list:
             processed_list.append(strain)
-            # Filter rows for the current strain
+            # Filter rows for the current strain (select all samples that start with the strain name)
             ispec_temp = ispec_mat_trans[ispec_mat_trans.index.map(lambda x: strain in x)]
             # If only one sample for the strain, use its values directly
             if len(ispec_temp) == 1:
@@ -251,7 +252,7 @@ def renaming_merged_ispec_mat(ena_df_file, merged_ispec_mat):
 def get_bigscape_df(input_file):
     bigscape_df = pd.read_csv(input_file,sep='\t')
     bigscape_df.rename(columns=lambda x: re.sub(" ","_",x), inplace=True)
-    bigscape_df = bigscape_df[bigscape_df.Clustername_1 != bigscape_df.Clustername_2]
+    bigscape_df = bigscape_df[bigscape_df.Clustername_1 != bigscape_df.Clustername_2]    # Remove self-matches 
     bigscape_df.reset_index(inplace=True,drop=True)
     return bigscape_df
 
@@ -375,67 +376,67 @@ def parse_gbk_list(folder_list):
     # Return the lists of original and renamed file identifiers
     return gbk_list, new_name_list
 
-# def get_bigscape_dict2(name_dict,bigscape_dict):
-#     bigscape_dict2 = defaultdict(list)
-#     for key in bigscape_dict:
-#         for value in bigscape_dict[key]:
-#             if 'BGC' in value:
-#                 bigscape_dict2[key].append(value)
-#             else:
-#                 if 'ERR' in name_dict[value]:
-#                     new_ERR_name = name_dict[value].split('_')[0] + '.' + name_dict[value].split('.')[1]
-#                     bigscape_dict2[key].append(new_ERR_name)
-#                 else:
-#                     bigscape_dict2[key].append(name_dict[value])
-#     return bigscape_dict2
-
-# change: I have added the block below as a replacement for the function above 
-from collections import defaultdict
-
-def get_bigscape_dict2(name_dict, bigscape_dict):
-    """
-    Rename the BGC entries in a BiG-SCAPE dictionary using a name mapping.
-
-    Parameters
-    ----------
-    name_dict : dict
-        A dictionary mapping original BGC names to renamed, standardized names.
-    bigscape_dict : dict
-        A dictionary mapping GCF IDs (e.g. 'GCF1') to a list of BGC names.
-
-    Returns
-    -------
-    bigscape_dict2 : defaultdict(list)
-        A new dictionary with the same GCF keys, but renamed BGC entries.
-    """
+def get_bigscape_dict2(name_dict,bigscape_dict):
     bigscape_dict2 = defaultdict(list)
-
-    # Iterate through each GCF and its list of BGCs
-    for key, values in bigscape_dict.items():
-        for value in values:
-
-            # Case 1: value is missing from name_dict — log a warning and skip
-            if value not in name_dict:
-                print(f"[WARNING] BGC not found in name_dict: {value}")
-                continue  # Skip this BGC
-
-            # Case 2: MIBiG-style BGC (e.g., BGC0001234) — keep original name
+    for key in bigscape_dict:
+        for value in bigscape_dict[key]:
             if 'BGC' in value:
                 bigscape_dict2[key].append(value)
-                continue  # Move on to next BGC
-
-            # Case 3: ENA-derived name contains ERR code (e.g., ERR123456_sample.region001)
-            if 'ERR' in name_dict[value]:
-                # Construct a new name like: ERR123456.region001
-                parts = name_dict[value].split('_')[0].split('.')
-                new_ERR_name = parts[0] + '.' + name_dict[value].split('.')[1]
-                bigscape_dict2[key].append(new_ERR_name)
-
-            # Case 4: Generic renaming using name_dict
             else:
-                bigscape_dict2[key].append(name_dict[value])
-
+                if 'ERR' in name_dict[value]:
+                    new_ERR_name = name_dict[value].split('_')[0] + '.' + name_dict[value].split('.')[1]
+                    bigscape_dict2[key].append(new_ERR_name)
+                else:
+                    bigscape_dict2[key].append(name_dict[value])
     return bigscape_dict2
+
+# # change: I have added the block below as a replacement for the function above 
+# from collections import defaultdict
+
+# def get_bigscape_dict2(name_dict, bigscape_dict):
+#     """
+#     Rename the BGC entries in a BiG-SCAPE dictionary using a name mapping.
+
+#     Parameters
+#     ----------
+#     name_dict : dict
+#         A dictionary mapping original BGC names to renamed, standardized names.
+#     bigscape_dict : dict
+#         A dictionary mapping GCF IDs (e.g. 'GCF1') to a list of BGC names.
+
+#     Returns
+#     -------
+#     bigscape_dict2 : defaultdict(list)
+#         A new dictionary with the same GCF keys, but renamed BGC entries.
+#     """
+#     bigscape_dict2 = defaultdict(list)
+
+#     # Iterate through each GCF and its list of BGCs
+#     for key, values in bigscape_dict.items():
+#         for value in values:
+
+#             # Case 1: value is missing from name_dict — log a warning and skip
+#             if value not in name_dict:
+#                 print(f"[WARNING] BGC not found in name_dict: {value}")
+#                 continue  # Skip this BGC
+
+#             # Case 2: MIBiG-style BGC (e.g., BGC0001234) — keep original name
+#             if 'BGC' in value:
+#                 bigscape_dict2[key].append(value)
+#                 continue  # Move on to next BGC
+
+#             # Case 3: ENA-derived name contains ERR code (e.g., ERR123456_sample.region001)
+#             if 'ERR' in name_dict[value]:
+#                 # Construct a new name like: ERR123456.region001
+#                 parts = name_dict[value].split('_')[0].split('.')
+#                 new_ERR_name = parts[0] + '.' + name_dict[value].split('.')[1]
+#                 bigscape_dict2[key].append(new_ERR_name)
+
+#             # Case 4: Generic renaming using name_dict
+#             else:
+#                 bigscape_dict2[key].append(name_dict[value])
+
+#     return bigscape_dict2
 
 
 # def rename_bigscape_df(antismash_folder,bigscape_df,bigscape_dict):
