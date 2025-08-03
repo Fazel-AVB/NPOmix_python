@@ -1,0 +1,4 @@
+1. **Modified Notebook**: The `./NPOmix_python/notebook_basic-npomix1-gnps_mode-derep-explode-TFL230405.ipynb` notebook has undergone changes, which are also reflected in the `NPOmix_python/packages/npomix.py` file. These modifications are marked with the **#change** comment.
+2. **Original Version**: The original version of the notebook and the npomix.py module can be found on GitHub at `https://github.com/tiagolbiotech/NPOmix_python.git`.
+3. **Reorganized Notebook**: The notebook has been restructured, and each section has been titled accordingly for improved clarity and readability.
+4. **Notebook-Specific Changes**: A detailed list of changes specific to this notebook can be found at the beginning of the notebook.
