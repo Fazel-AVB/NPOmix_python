@@ -1,4 +1,4 @@
-✦ This Jupyter notebook, notebook_basic-npomix1-gnps_mode-derep-explode-TFL230405.ipynb, provides a
+This Jupyter notebook, notebook_basic-npomix1-gnps_mode-derep-explode-TFL230405.ipynb, provides a
   workflow for analyzing metabolomics data by linking molecular networks from GNPS with biosynthetic
   gene clusters (BGCs).
 
