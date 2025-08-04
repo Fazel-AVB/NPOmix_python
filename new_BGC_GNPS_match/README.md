@@ -89,3 +89,5 @@ Here is a breakdown of each column in the `main_compound01.csv` file:
 | `connectivity_layers`| A list of the 14-character InChIKey connectivity layers derived from the `inchikeys` list. |
 | `inchikey` | The full, 27-character unique InChIKey. |
 | `connectivity_layer` | The **primary key for matching**. This is the 14-character unique connectivity layer extracted from `inchikeys`. It represents the molecule's structural graph, making it robust to differences in stereochemistry.
+
+- Based on the shared `inchikey` between mibig and gnps files, `BGC_accessions` column has been added to the `gnps_mibig_match01.csv`, representing the linked BGCs to every GNPS spectrum. 
